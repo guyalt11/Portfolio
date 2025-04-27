@@ -1,0 +1,12 @@
+{
+  "photos": [],
+  "drawings": [],
+  "music": [],
+  "about": {
+    "path": "http://localhost:3001/uploads/abouts/1745794886344-171344289.jpg",
+    "title": "asdf",
+    "description": "asdf",
+    "date": "2025-04-27T23:01:26.416Z",
+    "dateUpdated": "2025-04-27T23:01:26.651Z"
+  }
+}

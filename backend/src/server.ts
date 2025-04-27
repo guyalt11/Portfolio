@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
 import uploadRoutes from './routes/upload';
+import contentRoutes from './routes/content';
 
 // Load environment variables
 dotenv.config();
@@ -30,6 +31,7 @@ app.use('/uploads', express.static(uploadPath));
 
 // Routes
 app.use('/api/upload', uploadRoutes);
+app.use('/api/content', contentRoutes);
 
 // Get files by type
 app.get('/api/files/:type', (req, res) => {

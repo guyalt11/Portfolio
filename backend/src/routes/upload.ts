@@ -34,6 +34,9 @@ const storage = multer.diskStorage({
       case 'music':
         uploadPath = path.join(basePath, 'music');
         break;
+      case 'about':
+        uploadPath = path.join(basePath, 'about');
+        break;
       default:
         console.log('Invalid file type:', type);
         return cb(new Error('Invalid file type'), '');
@@ -66,7 +69,7 @@ const validateType = (req: express.Request, res: express.Response, next: express
   const type = req.query.type as string;
   console.log('Type validation:', { type });
 
-  if (!type || !['photo', 'drawing', 'music'].includes(type)) {
+  if (!type || !['photo', 'drawing', 'music', 'about'].includes(type)) {
     console.log('Invalid type parameter:', type);
     return res.status(400).json({ error: 'Invalid content type' });
   }
