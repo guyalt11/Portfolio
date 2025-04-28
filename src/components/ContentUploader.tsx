@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { uploadFile } from "@/services/fileService";
 
 interface ContentUploaderProps {
   contentType: "photo" | "drawing" | "music" | "about";
@@ -32,51 +31,61 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
 
     setIsLoading(true);
     try {
-      const fileUrl = await uploadFile(file, contentType, title, description);
-      
-      // Create content entry
+      // First, upload the file
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('title', title);
+      formData.append('description', description);
+
+      console.log('Uploading file with type:', contentType);
+
+      const uploadResponse = await fetch(`http://localhost:3001/api/upload?type=${contentType}`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!uploadResponse.ok) {
+        const errorData = await uploadResponse.json();
+        throw new Error(errorData.message || 'Failed to upload file');
+      }
+
+      const uploadResult = await uploadResponse.json();
+      console.log('Upload result:', uploadResult);
+      console.log('path:', uploadResult.fullPath);
+
+      // Then, update the content.json with the new entry
       const contentEntry: ContentEntry = {
-        path: fileUrl,
+        path: uploadResult.fullPath,
         title: title,
         description: description,
         date: new Date().toISOString()
       };
 
-      // Save to JSON file
-      await saveContentToJson(contentEntry, contentType);
-      
+      const contentResponse = await fetch('http://localhost:3001/api/content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: contentType,
+          entry: contentEntry
+        }),
+      });
+
+      if (!contentResponse.ok) {
+        throw new Error('Failed to update content.json');
+      }
+
       toast.success(`${contentType.charAt(0).toUpperCase() + contentType.slice(1)} uploaded successfully`);
       setTitle("");
       setDescription("");
       setFile(null);
       onContentAdded();
     } catch (error) {
-      toast.error("Failed to upload file");
-      console.error(error);
+      console.error('Upload error:', error);
+      toast.error(error instanceof Error ? error.message : "Failed to upload file");
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const saveContentToJson = async (entry: ContentEntry, type: string) => {
-    try {
-      const response = await fetch('http://localhost:3001/api/content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          type,
-          entry
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to save content entry');
-      }
-    } catch (error) {
-      console.error('Error saving content entry:', error);
-      throw error;
     }
   };
 

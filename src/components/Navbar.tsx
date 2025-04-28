@@ -30,7 +30,7 @@ const Navbar = () => {
   const menuItems = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
-    { path: "/sketches", label: "Drawings" },
+    { path: "/drawings", label: "Drawings" },
     { path: "/photos", label: "Photos" },
     { path: "/music", label: "Music" },
     { path: isAdmin ? "/cms" : "/login", label: isAdmin ? "Admin" : "Admin Login" }
@@ -43,33 +43,29 @@ const Navbar = () => {
   return (
     <>
       {/* Hamburger menu trigger - shown on all pages */}
-      <div className="fixed top-4 right-4 z-20">
+      <div className="fixed top-4 right-4 z-50">
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           <SheetTrigger asChild>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className={`${
-                isHomepage 
-                  ? "text-white hover:bg-white/10" 
-                  : "bg-white/80 hover:bg-white"
-              } transition-all duration-300`}
+            <Button
+              variant="ghost"
+              size="lg"
+              className="text-white hover:bg-white/10 transition-all duration-300 h-12 w-12 p-2"
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="h-8 w-8 !size-8" width="2rem" height="2rem" />
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent 
             side="right"
-            className="w-[200px] rounded-lg bg-white/70 backdrop-blur-sm border-none shadow-lg fixed top-4 right-4 h-auto max-h-[calc(100vh-2rem)]"
+            className="w-[300px] rounded-lg bg-white/70 backdrop-blur-sm border-none shadow-lg fixed top-4 right-4 h-auto max-h-[calc(100vh-2rem)]"
           >
-            <nav className="flex flex-col gap-2 py-4">
+            <nav className="flex flex-col gap-4 py-6">
               {menuItems.map((item) => (
                 <SheetClose asChild key={item.path}>
                   <Link 
                     to={item.path} 
                     className={`
-                      text-sm py-2 px-3 rounded-md transition-all duration-200
+                      text-xl py-3 px-4 rounded-md transition-all duration-200
                       hover:bg-gray-100/80 relative overflow-hidden
                       ${isActive(item.path) ? "text-gray-900 font-medium" : "text-gray-600"}
                     `}
@@ -87,21 +83,73 @@ const Navbar = () => {
       {/* Desktop menu - Only on homepage */}
       {isHomepage && (
         <nav className="fixed hidden md:flex top-0 right-0 h-screen w-1/2 flex-col justify-center items-center z-10 min-w-[400px]">
-          <ul className="flex flex-col gap-8">
+          <ul className="flex flex-col gap-12">
             {menuItems.filter(item => item.path !== "/login" && item.path !== "/cms").map((item) => (
               <li key={item.path} className="nav-menu-item">
                 <Link 
                   to={item.path} 
-                  className="relative text-3xl text-white opacity-75 hover:opacity-100 transition-all duration-300 group py-3 px-6"
+                  className="relative text-4xl text-white opacity-75 hover:opacity-100 transition-all duration-300 group py-4 px-8"
                 >
                   <span className="relative z-10">{item.label}</span>
-                  <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                  <span className="absolute left-0 right-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
       )}
+
+      <div className="fixed inset-0 z-50 flex md:hidden">
+        <div className="fixed inset-0 bg-black/50" onClick={() => setIsMenuOpen(false)} />
+        <div className="fixed inset-y-0 right-0 w-3/4 bg-white p-6">
+          <div className="flex justify-end">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X className="h-8 w-8" />
+            </Button>
+          </div>
+          <nav className="mt-6 space-y-6">
+            <Link
+              to="/"
+              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              to="/photos"
+              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Photos
+            </Link>
+            <Link
+              to="/drawings"
+              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Drawings
+            </Link>
+            <Link
+              to="/music"
+              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Music
+            </Link>
+          </nav>
+        </div>
+      </div>
 
       <style>{`
         .nav-menu-item {

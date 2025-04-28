@@ -1,12 +1,98 @@
 {
-  "photos": [],
-  "drawings": [],
+  "photos": [
+    {
+      "path": "http://localhost:3001/uploads/photos/1745826864906-719631520.jpg",
+      "title": "test",
+      "description": "asdfsadf asdfas sdf",
+      "date": "2025-04-28T07:54:24.357Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745826872674-433953107.jpeg",
+      "title": "asdf ",
+      "description": "asdf sdf asd",
+      "date": "2025-04-28T07:54:32.341Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745826882743-539247675.png",
+      "title": "asdfsad",
+      "description": " asdfasdf adsf sa",
+      "date": "2025-04-28T07:54:42.876Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745826910001-231483028.jpg",
+      "title": "sadf",
+      "description": "asdfasdfsad fasdf ",
+      "date": "2025-04-28T07:55:09.724Z"
+    }
+  ],
+  "drawings": [
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745826727610-571530820.jpeg",
+      "title": "test",
+      "description": "test",
+      "date": "2025-04-28T07:52:07.737Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745826782790-479392368.jpg",
+      "title": "test1",
+      "description": "",
+      "date": "2025-04-28T07:53:02.700Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745826796101-337855666.jpg",
+      "title": "tst",
+      "description": "tastas asdf sda f",
+      "date": "2025-04-28T07:53:15.479Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745826807960-341619668.png",
+      "title": "asdf",
+      "description": "asdf",
+      "date": "2025-04-28T07:53:27.696Z"
+    },
+    {
+      "title": "ttttttttttttt",
+      "description": "ttttt",
+      "date": "2025-04-28T09:58:20.212Z"
+    },
+    {
+      "title": "4234234",
+      "description": "",
+      "date": "2025-04-28T10:06:29.511Z"
+    },
+    {
+      "title": "testestsetsestsets",
+      "description": "",
+      "date": "2025-04-28T10:09:41.216Z"
+    },
+    {
+      "title": "title",
+      "description": "",
+      "date": "2025-04-28T10:20:58.263Z"
+    },
+    {
+      "title": "asdfasdfasdfasdfasdfasdf11111",
+      "description": "",
+      "date": "2025-04-28T10:22:58.353Z"
+    },
+    {
+      "title": "33321312313",
+      "description": "",
+      "date": "2025-04-28T10:24:35.377Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745835998979-697645220.jpg",
+      "title": "333111333",
+      "description": "",
+      "date": "2025-04-28T10:26:38.283Z"
+    }
+  ],
   "music": [],
   "about": {
-    "path": "http://localhost:3001/uploads/abouts/1745794886344-171344289.jpg",
-    "title": "asdf",
-    "description": "asdf",
-    "date": "2025-04-27T23:01:26.416Z",
-    "dateUpdated": "2025-04-27T23:01:26.651Z"
+    "path": "http://localhost:3001/uploads/abouts/1745826713158-311755941.jpg",
+    "title": "ttttttttttt",
+    "description": "ttttttttttttt",
+    "date": "2025-04-28T09:57:57.220Z",
+    "dateUpdated": "2025-04-28T09:57:56.815Z"
   }
 }

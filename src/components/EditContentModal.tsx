@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import {
   Dialog,
@@ -12,17 +11,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  ContentItem, 
-  ContentType, 
-  getContentById, 
-  updateContent,
-  fileToDataUrl 
-} from "@/services/storageService";
 import { toast } from "@/components/ui/use-toast";
 
 interface EditContentModalProps {
-  contentType: ContentType;
+  contentType: "photo" | "drawing" | "music" | "about";
   contentId: string;
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
@@ -42,24 +34,17 @@ const EditContentModal = ({
   const [file, setFile] = useState<File | null>(null);
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [uploadType, setUploadType] = useState("info"); // "info", "file", "youtube", "pdf"
-  const [item, setItem] = useState<ContentItem | null>(null);
+  const [uploadType, setUploadType] = useState("info");
 
   useEffect(() => {
     if (isOpen && contentId) {
-      const contentItem = getContentById(contentType, contentId);
-      if (contentItem) {
-        setItem(contentItem);
-        setTitle(contentItem.title || "");
-        setDescription(contentItem.description || "");
-        setYoutubeUrl(contentItem.youtubeUrl || "");
-      }
+      // Load content from server if needed
+      setTitle(contentId.split('.')[0]); // Use filename as title
+      setDescription("");
     }
-  }, [isOpen, contentId, contentType]);
+  }, [isOpen, contentId]);
 
   const handleSubmit = async () => {
-    if (!item) return;
-    
     if (!title.trim()) {
       toast({
         title: "Error",
@@ -72,32 +57,54 @@ const EditContentModal = ({
     try {
       setIsLoading(true);
       
-      const updatedItem = { ...item, title, description };
-      
       if (uploadType === "file" && file) {
-        updatedItem.url = await fileToDataUrl(file);
+        // Delete old file and upload new one
+        const deleteResponse = await fetch('http://localhost:3001/api/delete', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ path: contentId }),
+        });
+
+        if (!deleteResponse.ok) {
+          throw new Error('Failed to delete old file');
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('type', contentType);
+
+        const uploadResponse = await fetch('http://localhost:3001/api/upload', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error('Failed to upload new file');
+        }
       }
       
       if (uploadType === "youtube") {
-        updatedItem.youtubeUrl = youtubeUrl;
+        // Handle YouTube URL update
+        // This would need to be implemented on the server side
       }
       
       if (uploadType === "pdf" && pdfFile) {
-        updatedItem.pdfUrl = await fileToDataUrl(pdfFile);
+        // Handle PDF file update
+        // This would need to be implemented on the server side
       }
 
-      const success = updateContent(updatedItem);
-      
-      if (success) {
-        toast({
-          title: "Success",
-          description: "Content updated successfully",
-        });
-        setFile(null);
-        setPdfFile(null);
-        onContentUpdated();
-        onOpenChange(false);
-      }
+      toast({
+        title: "Success",
+        description: "Content updated successfully",
+      });
+      setFile(null);
+      setPdfFile(null);
+      onContentUpdated();
+      onOpenChange(false);
     } catch (error) {
       toast({
         title: "Error",

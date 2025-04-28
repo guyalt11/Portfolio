@@ -1,6 +1,15 @@
-
 import { useState } from "react";
-import { ContentItem } from "@/services/storageService";
+
+interface ContentItem {
+  id: string;
+  type: "photo" | "drawing" | "music" | "about";
+  title: string;
+  description?: string;
+  url: string;
+  youtubeUrl?: string;
+  pdfUrl?: string;
+  dateCreated: string;
+}
 
 interface MusicPlayerProps {
   tracks: ContentItem[];

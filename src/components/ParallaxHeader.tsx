@@ -64,13 +64,16 @@ const ParallaxHeader = ({ imageUrl, fullHeight = true }: ParallaxHeaderProps) =>
           backgroundImage: `url(${imageUrl})`,
           transform: `translateY(${calculateParallax()}px)`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center 70%',
+          backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '110%' // Slightly larger than container to prevent gaps during parallax
+          height: '120%', // Increased to prevent gaps during parallax
+          width: '120%', // Increased to prevent gaps during parallax
+          left: '-10%', // Center the increased width
+          top: '-10%' // Center the increased height
         }}
       />
       {/* Solid overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/20" />
     </div>
   );
 };

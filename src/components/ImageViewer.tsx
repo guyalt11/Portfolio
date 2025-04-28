@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
-import { ContentItem } from '@/services/fileService';
+
+interface ContentItem {
+  id: string;
+  type: "photo" | "drawing" | "music" | "about";
+  title: string;
+  description?: string;
+  url: string;
+  dateCreated: string;
+}
 
 /**
  * ImageViewer Component

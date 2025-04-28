@@ -6,11 +6,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/use-toast";
-import { ContentItem, getContent, deleteContent } from "@/services/storageService";
 import { getCurrentUser, changePassword, logout } from "@/services/authService";
 import ContentUploader from "@/components/ContentUploader";
 import EditContentModal from "@/components/EditContentModal";
 import { Edit, Upload } from "lucide-react";
+
+interface ContentItem {
+  id: string;
+  type: "photo" | "drawing" | "music" | "about";
+  title: string;
+  description?: string;
+  url: string;
+  dateCreated: string;
+}
 
 const CMS = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -22,6 +30,7 @@ const CMS = () => {
   const [photos, setPhotos] = useState<ContentItem[]>([]);
   const [drawings, setDrawings] = useState<ContentItem[]>([]);
   const [music, setMusic] = useState<ContentItem[]>([]);
+  const [rawContent, setRawContent] = useState<any>(null);
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -38,11 +47,57 @@ const CMS = () => {
     loadContent();
   }, []);
 
-  const loadContent = () => {
-    setAboutContent(getContent("about"));
-    setPhotos(getContent("photo"));
-    setDrawings(getContent("drawing"));
-    setMusic(getContent("music"));
+  const loadContent = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/api/content');
+      const data = await response.json();
+      
+      if (data.about) {
+        setAboutContent(data.about);
+      }
+      
+      if (data.photos) {
+        setPhotos(data.photos.map((item: any, index: number) => ({
+          id: `photo-${index}`,
+          type: "photo",
+          title: item.title || '',
+          description: item.description || '',
+          url: item.path || '',
+          dateCreated: item.date || new Date().toISOString()
+        })));
+      }
+      
+      if (data.drawings) {
+        setDrawings(data.drawings.map((item: any, index: number) => ({
+          id: `drawing-${index}`,
+          type: "drawing",
+          title: item.title || '',
+          description: item.description || '',
+          url: item.path || '',
+          dateCreated: item.date || new Date().toISOString()
+        })));
+      }
+      
+      if (data.music) {
+        setMusic(data.music.map((item: any, index: number) => ({
+          id: `music-${index}`,
+          type: "music",
+          title: item.title || '',
+          description: item.description || '',
+          url: item.path || '',
+          dateCreated: item.date || new Date().toISOString()
+        })));
+      }
+      
+      setRawContent(data);
+    } catch (error) {
+      console.error("Error loading content:", error);
+      toast({
+        title: "Error",
+        description: "Failed to load content",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleOpenEditModal = (type: "photo" | "drawing" | "music", id: string) => {
@@ -51,11 +106,28 @@ const CMS = () => {
     setEditModalOpen(true);
   };
 
-  const handleDeleteContent = (type: "photo" | "drawing" | "music", id: string) => {
-    const success = deleteContent(type, id);
-    if (success) {
-      toast({ title: "Content deleted successfully" });
-      loadContent(); // Refresh content
+  const handleDeleteContent = async (type: "photo" | "drawing" | "music", id: string) => {
+    try {
+      const response = await fetch('http://localhost:3001/api/delete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ path: id }),
+      });
+
+      if (response.ok) {
+        toast({ title: "Content deleted successfully" });
+        loadContent(); // Refresh content
+      } else {
+        throw new Error("Failed to delete content");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to delete content",
+        variant: "destructive",
+      });
     }
   };
 
@@ -176,6 +248,33 @@ const CMS = () => {
             <div className="grid gap-6">
               <ContentUploader contentType="photo" onContentAdded={loadContent} />
               
+              {/* Debug Section */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Debug Information</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-medium mb-2">Content from getFiles:</h3>
+                      <pre className="bg-gray-100 p-4 rounded overflow-auto">
+                        {JSON.stringify({
+                          hasPhotos: photos.length > 0,
+                          photosCount: photos.length,
+                          firstPhoto: photos[0]
+                        }, null, 2)}
+                      </pre>
+                    </div>
+                    <div>
+                      <h3 className="font-medium mb-2">Raw Content from API:</h3>
+                      <pre className="bg-gray-100 p-4 rounded overflow-auto">
+                        {JSON.stringify(rawContent, null, 2)}
+                      </pre>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card>
                 <CardHeader>
                   <CardTitle>Manage Photos</CardTitle>

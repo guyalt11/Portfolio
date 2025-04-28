@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { ContentItem } from "@/services/fileService";
 import ImageViewer from "./ImageViewer";
+
+interface ContentItem {
+  id: string;
+  type: "photo" | "drawing" | "music" | "about";
+  title: string;
+  description?: string;
+  url: string;
+  dateCreated: string;
+}
 
 interface GalleryProps {
   items: ContentItem[];
-  type: "photo" | "sketch";
+  type: "photo" | "drawing";
 }
 
 const Gallery = ({ items, type }: GalleryProps) => {

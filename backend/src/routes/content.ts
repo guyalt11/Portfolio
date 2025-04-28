@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Path to the content JSON file
 const contentPath = path.join(__dirname, '../../public/content.json');
+const uploadPath = path.join(__dirname, '../../public/uploads');
 
 // Ensure content file exists
 if (!fs.existsSync(contentPath)) {
@@ -63,6 +64,41 @@ router.post('/', (req, res) => {
   } catch (error) {
     console.error('Error saving content:', error);
     res.status(500).json({ error: 'Failed to save content' });
+  }
+});
+
+// Delete content entry and file
+router.delete('/', (req, res) => {
+  try {
+    const { path: filePath, type } = req.body;
+    
+    if (!filePath || !type) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Read existing content
+    const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+    
+    // Remove the entry from content.json
+    const typeKey = type + 's';
+    if (content[typeKey]) {
+      content[typeKey] = content[typeKey].filter((item: any) => item.path !== filePath);
+      fs.writeFileSync(contentPath, JSON.stringify(content, null, 2));
+    }
+
+    // Delete the file
+    const fileName = filePath.split('/').pop();
+    const typeDir = type === 'drawing' ? 'drawings' : type + 's';
+    const fullPath = path.join(uploadPath, typeDir, fileName || '');
+    
+    if (fs.existsSync(fullPath)) {
+      fs.unlinkSync(fullPath);
+    }
+    
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting content:', error);
+    res.status(500).json({ error: 'Failed to delete content' });
   }
 });
 

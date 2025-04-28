@@ -1,20 +1,63 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
-import { getContent, type ContentItem } from "@/services/storageService";
 import ParallaxHeader from "@/components/ParallaxHeader";
 
+interface ContentItem {
+  id: string;
+  type: "photo" | "drawing" | "music" | "about";
+  title: string;
+  description?: string;
+  url: string;
+  youtubeUrl?: string;
+  pdfUrl?: string;
+  dateCreated: string;
+}
+
+interface AboutContent {
+  text: string;
+  dateUpdated: string;
+  backgroundImage: string;
+}
+
 const Music = () => {
-  const [aboutContent, setAboutContent] = useState({ backgroundImage: "" });
+  const [aboutContent, setAboutContent] = useState<AboutContent>({
+    text: "",
+    dateUpdated: "",
+    backgroundImage: "",
+  });
   const [musicContent, setMusicContent] = useState<ContentItem[]>([]);
 
   useEffect(() => {
-    const about = getContent("about");
-    const music = getContent("music");
-    setAboutContent(about);
-    setMusicContent(music);
+    const loadContent = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/content');
+        const data = await response.json();
+        
+        if (data.about) {
+          setAboutContent(data.about as AboutContent);
+        }
+        
+        if (data.music) {
+          setMusicContent(data.music.map((item: any, index: number) => ({
+            id: `music-${index}`,
+            type: "music",
+            title: item.title || '',
+            description: item.description || '',
+            url: item.path || '',
+            youtubeUrl: item.youtubeUrl,
+            pdfUrl: item.pdfUrl,
+            dateCreated: item.date || new Date().toISOString()
+          })));
+        }
+      } catch (error) {
+        console.error("Error loading content:", error);
+      }
+    };
+
+    loadContent();
   }, []);
 
-  const backgroundImage = aboutContent.backgroundImage || "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1920&q=80";
+  const backgroundImage = "http://localhost:3001/uploads/home/background.jpg";
   
   return (
     <div className="min-h-screen">
