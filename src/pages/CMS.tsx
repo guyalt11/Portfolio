@@ -272,7 +272,7 @@ const CMS = () => {
                               <Button 
                                 variant="outline" 
                                 size="sm"
-                                onClick={() => handleOpenEditModal("photo", photo.id)}
+                                onClick={() => handleOpenEditModal("photo", photo.url)}
                               >
                                 <Edit className="h-4 w-4 mr-1" />
                                 Edit
