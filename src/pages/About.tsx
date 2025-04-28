@@ -46,17 +46,9 @@ const About = () => {
         
         {aboutContent ? (
           <div className="space-y-6">
-            <img 
-              src={aboutContent.url} 
-              alt={aboutContent.title} 
-              className="w-full h-96 object-cover rounded-lg"
-            />
             <div>
               <h2 className="text-2xl font-semibold mb-4">{aboutContent.title}</h2>
               <p className="text-gray-600 whitespace-pre-wrap">{aboutContent.description}</p>
-            </div>
-            <div className="text-sm text-gray-500">
-              <p>Last updated: {new Date(aboutContent.dateUpdated).toLocaleDateString()}</p>
             </div>
           </div>
         ) : (

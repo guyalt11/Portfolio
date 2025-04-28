@@ -13,13 +13,12 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     
     try {
-      const user = login({ username, password });
-      
+      const user = await login({ username, password });
       if (user) {
         navigate("/cms");
       }
@@ -62,9 +61,6 @@ const Login = () => {
                   disabled={isLoading}
                   placeholder="••••••••"
                 />
-                <p className="text-xs text-site-gray">
-                  Default credentials: admin / admin
-                </p>
               </div>
             </CardContent>
             <CardFooter>

@@ -33,19 +33,13 @@ const Music = () => {
         const response = await fetch('http://localhost:3001/api/content');
         const data = await response.json();
         
-        if (data.about) {
-          setAboutContent(data.about as AboutContent);
-        }
-        
-        if (data.music) {
-          setMusicContent(data.music.map((item: any, index: number) => ({
+        if (data.musics) {
+          setMusicContent(data.musics.map((item: any, index: number) => ({
             id: `music-${index}`,
             type: "music",
             title: item.title || '',
             description: item.description || '',
-            url: item.path || '',
-            youtubeUrl: item.youtubeUrl,
-            pdfUrl: item.pdfUrl,
+            youtubeUrl: item.path,
             dateCreated: item.date || new Date().toISOString()
           })));
         }

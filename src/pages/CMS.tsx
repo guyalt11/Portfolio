@@ -30,11 +30,6 @@ const CMS = () => {
   const [photos, setPhotos] = useState<ContentItem[]>([]);
   const [drawings, setDrawings] = useState<ContentItem[]>([]);
   const [music, setMusic] = useState<ContentItem[]>([]);
-  const [rawContent, setRawContent] = useState<any>(null);
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordLoading, setPasswordLoading] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [editingContentType, setEditingContentType] = useState<"photo" | "drawing" | "music">("photo");
   const [editingContentId, setEditingContentId] = useState("");
@@ -78,8 +73,8 @@ const CMS = () => {
         })));
       }
       
-      if (data.music) {
-        setMusic(data.music.map((item: any, index: number) => ({
+      if (data.musics) {
+        setMusic(data.musics.map((item: any, index: number) => ({
           id: `music-${index}`,
           type: "music",
           title: item.title || '',
@@ -88,8 +83,7 @@ const CMS = () => {
           dateCreated: item.date || new Date().toISOString()
         })));
       }
-      
-      setRawContent(data);
+
     } catch (error) {
       console.error("Error loading content:", error);
       toast({
@@ -132,48 +126,6 @@ const CMS = () => {
     }
   };
 
-  const handlePasswordChange = () => {
-    if (newPassword !== confirmPassword) {
-      toast({
-        title: "Error",
-        description: "New passwords don't match",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (newPassword.length < 4) {
-      toast({
-        title: "Error",
-        description: "New password must be at least 4 characters long",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setPasswordLoading(true);
-    
-    try {
-      if (user?.username && changePassword(user.username, newPassword)) {
-        toast({
-          title: "Success",
-          description: "Password changed successfully",
-        });
-        setOldPassword("");
-        setNewPassword("");
-        setConfirmPassword("");
-      } else {
-        toast({
-          title: "Error",
-          description: "Failed to change password",
-          variant: "destructive",
-        });
-      }
-    } finally {
-      setPasswordLoading(false);
-    }
-  };
-
   const handleLogout = () => {
     logout();
     navigate("/login");
@@ -197,7 +149,6 @@ const CMS = () => {
             <TabsTrigger value="photos">Photos</TabsTrigger>
             <TabsTrigger value="drawings">Drawings</TabsTrigger>
             <TabsTrigger value="music">Music</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="about">
@@ -356,29 +307,26 @@ const CMS = () => {
                 </CardHeader>
                 <CardContent>
                   {music.length === 0 ? (
-                    <p className="text-site-gray">No music tracks uploaded yet</p>
+                    <p className="text-site-gray">No music uploaded yet</p>
                   ) : (
-                    <div className="space-y-4">
-                      {music.map((track) => (
-                        <div key={track.id} className="bg-white rounded-md p-4 flex items-center justify-between">
-                          <div>
-                            <h3 className="font-medium">{track.title}</h3>
-                            {track.description && (
-                              <p className="text-site-gray text-sm">{track.description}</p>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-3">
-                            {track.youtubeUrl ? (
-                              <span className="text-sm text-site-gray">YouTube video</span>
-                            ) : track.url ? (
-                              <audio controls src={track.url} className="max-w-xs" />
-                            ) : null}
-                            
-                            <div className="flex gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {music.map((music) => (
+                        <div key={music.id} className="bg-white rounded-md overflow-hidden shadow-sm w-fit">
+                          <iframe
+                            className="max-w-xs"
+                            src={music.url}
+                            title={music.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                          <div className="p-3 flex justify-between items-center">
+                            <h3 className="font-medium">{music.title}</h3>
+                            <div className="flex space-x-2">
                               <Button 
                                 variant="outline" 
                                 size="sm"
-                                onClick={() => handleOpenEditModal("music", track.id)}
+                                onClick={() => handleOpenEditModal("music", music.id)}
                               >
                                 <Edit className="h-4 w-4 mr-1" />
                                 Edit
@@ -386,7 +334,7 @@ const CMS = () => {
                               <Button 
                                 variant="destructive" 
                                 size="sm"
-                                onClick={() => handleDeleteContent("music", track.url)}
+                                onClick={() => handleDeleteContent("music", music.url)}
                               >
                                 Delete
                               </Button>
@@ -396,42 +344,6 @@ const CMS = () => {
                       ))}
                     </div>
                   )}
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="settings">
-            <div className="grid gap-6 max-w-2xl">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Change Password</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="new-password">New Password</Label>
-                    <Input
-                      id="new-password"
-                      type="password"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="confirm-password">Confirm New Password</Label>
-                    <Input
-                      id="confirm-password"
-                      type="password"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
-                  </div>
-                  <Button 
-                    onClick={handlePasswordChange} 
-                    disabled={passwordLoading}
-                  >
-                    {passwordLoading ? "Changing..." : "Change Password"}
-                  </Button>
                 </CardContent>
               </Card>
             </div>
