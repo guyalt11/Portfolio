@@ -1,0 +1,32 @@
+{
+  "photos": [
+    {
+      "path": "http://localhost:3001/uploads/photos/1745842212252-304829011.jpg",
+      "title": "1",
+      "description": "",
+      "date": "2025-04-28T12:10:12.611Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745848463083-202951092.png",
+      "title": "124124",
+      "description": "",
+      "date": "2025-04-28T13:54:23.916Z"
+    }
+  ],
+  "drawings": [
+    {
+      "path": "http://localhost:3001/uploads/drawings/1745842249502-86125383.jpg",
+      "title": "4",
+      "description": "",
+      "date": "2025-04-28T12:10:50.000Z"
+    }
+  ],
+  "music": [],
+  "about": {
+    "path": "http://localhost:3001/uploads/abouts/1745826713158-311755941.jpg",
+    "title": "ttttttttttt",
+    "description": "ttttttttttttt",
+    "date": "2025-04-28T09:57:57.220Z",
+    "dateUpdated": "2025-04-28T09:57:56.815Z"
+  }
+}
