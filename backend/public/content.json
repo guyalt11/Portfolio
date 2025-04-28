@@ -11,6 +11,12 @@
       "title": "124124",
       "description": "",
       "date": "2025-04-28T13:54:23.916Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745872286575-616753695.jpg",
+      "title": "asdf",
+      "description": "",
+      "date": "2025-04-28T20:31:26.394Z"
     }
   ],
   "drawings": [
@@ -21,12 +27,36 @@
       "date": "2025-04-28T12:10:50.000Z"
     }
   ],
-  "music": [],
   "about": {
-    "path": "http://localhost:3001/uploads/abouts/1745826713158-311755941.jpg",
-    "title": "ttttttttttt",
-    "description": "ttttttttttttt",
-    "date": "2025-04-28T09:57:57.220Z",
-    "dateUpdated": "2025-04-28T09:57:56.815Z"
-  }
+    "path": "",
+    "title": "asdfasdf",
+    "description": "asdfasdf asdfasdf asdfasdf ",
+    "date": "2025-04-28T14:29:28.385Z"
+  },
+  "musics": [
+    {
+      "path": "https://www.youtube.com/embed/MGjsxZqyxjU",
+      "title": "asdf",
+      "description": "",
+      "date": "2025-04-28T20:31:38.227Z"
+    },
+    {
+      "path": "https://www.youtube.com/embed/ty1a4nYGbbw",
+      "title": "asdf",
+      "description": "",
+      "date": "2025-04-28T20:31:55.358Z"
+    },
+    {
+      "path": "https://www.youtube.com/embed/0Wnvqgu7B7I",
+      "title": "111111",
+      "description": "",
+      "date": "2025-04-28T20:36:56.205Z"
+    },
+    {
+      "path": "https://www.youtube.com/embed/uA7vUS0--KU",
+      "title": "12312",
+      "description": "",
+      "date": "2025-04-28T21:40:15.514Z"
+    }
+  ]
 }

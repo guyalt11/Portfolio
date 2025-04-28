@@ -9,8 +9,8 @@ router.post('/login', (req, res) => {
   const { username, password } = req.body;
   
   // Get admin credentials from environment variables
-  const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-  const adminPassword = process.env.ADMIN_PASSWORD || 'admin';
+  const adminUsername = process.env.ADMIN_USERNAME;
+  const adminPassword = process.env.ADMIN_PASSWORD;
 
   // Check credentials
   if (username === adminUsername && password === adminPassword) {

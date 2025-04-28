@@ -10,57 +10,54 @@ interface Credentials {
   password: string;
 }
 
-// In a real app, this would be stored securely and not in localStorage
-const STORAGE_KEY = "cms_user_data";
-const DEFAULT_USER = { username: "admin", password: "admin" };
+const API_URL = 'http://localhost:3001/api';
 
-// Initialize localStorage with default user if none exists
-const initializeStorage = () => {
-  const existingData = localStorage.getItem(STORAGE_KEY);
-  
-  if (!existingData) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      users: [DEFAULT_USER]
-    }));
+export const login = async (credentials: Credentials): Promise<User | null> => {
+  try {
+    const response = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const authUser = {
+        username: data.user.username,
+        isAuthenticated: true
+      };
+      localStorage.setItem('authToken', data.token);
+      localStorage.setItem('currentUser', JSON.stringify(authUser));
+      return authUser;
+    }
+
+    toast({
+      title: "Login Failed",
+      description: "Invalid username or password",
+      variant: "destructive",
+    });
+    return null;
+  } catch (error) {
+    console.log('Login error:', error);
+    toast({
+      title: "Login Failed",
+      description: "Could not connect to authentication server",
+      variant: "destructive",
+    });
+    return null;
   }
-};
-
-// Call this function when the app starts
-initializeStorage();
-
-export const login = (credentials: Credentials): User | null => {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-  const user = data.users.find(
-    (u: Credentials) => 
-      u.username === credentials.username && 
-      u.password === credentials.password
-  );
-
-  if (user) {
-    const authUser = { 
-      username: user.username, 
-      isAuthenticated: true 
-    };
-    sessionStorage.setItem("currentUser", JSON.stringify(authUser));
-    return authUser;
-  }
-
-  toast({
-    title: "Login Failed",
-    description: "Invalid username or password",
-    variant: "destructive",
-  });
-  
-  return null;
 };
 
 export const logout = () => {
-  sessionStorage.removeItem("currentUser");
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("authToken");
   return { username: "", isAuthenticated: false };
 };
 
 export const getCurrentUser = (): User | null => {
-  const userJson = sessionStorage.getItem("currentUser");
+  const userJson = localStorage.getItem("currentUser");
   if (!userJson) return null;
   
   return JSON.parse(userJson);
@@ -72,12 +69,12 @@ export const isAuthenticated = (): boolean => {
 };
 
 export const changePassword = (username: string, newPassword: string): boolean => {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-  const userIndex = data.users.findIndex((u: Credentials) => u.username === username);
+  const data = JSON.parse(localStorage.getItem("cms_user_data") || "{}");
+  const userIndex = data.users?.findIndex((u: Credentials) => u.username === username);
 
   if (userIndex !== -1) {
     data.users[userIndex].password = newPassword;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem("cms_user_data", JSON.stringify(data));
     return true;
   }
 
