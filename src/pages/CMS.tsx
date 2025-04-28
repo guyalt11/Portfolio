@@ -108,12 +108,13 @@ const CMS = () => {
 
   const handleDeleteContent = async (type: "photo" | "drawing" | "music", id: string) => {
     try {
-      const response = await fetch('http://localhost:3001/api/delete', {
-        method: 'POST',
+      
+      const response = await fetch('http://localhost:3001/api/content', {
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ path: id }),
+        body: JSON.stringify({ path: id, type }),
       });
 
       if (response.ok) {
@@ -247,34 +248,6 @@ const CMS = () => {
           <TabsContent value="photos">
             <div className="grid gap-6">
               <ContentUploader contentType="photo" onContentAdded={loadContent} />
-              
-              {/* Debug Section */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Debug Information</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-medium mb-2">Content from getFiles:</h3>
-                      <pre className="bg-gray-100 p-4 rounded overflow-auto">
-                        {JSON.stringify({
-                          hasPhotos: photos.length > 0,
-                          photosCount: photos.length,
-                          firstPhoto: photos[0]
-                        }, null, 2)}
-                      </pre>
-                    </div>
-                    <div>
-                      <h3 className="font-medium mb-2">Raw Content from API:</h3>
-                      <pre className="bg-gray-100 p-4 rounded overflow-auto">
-                        {JSON.stringify(rawContent, null, 2)}
-                      </pre>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
               <Card>
                 <CardHeader>
                   <CardTitle>Manage Photos</CardTitle>
@@ -307,7 +280,7 @@ const CMS = () => {
                               <Button 
                                 variant="destructive" 
                                 size="sm"
-                                onClick={() => handleDeleteContent("photo", photo.id)}
+                                onClick={() => handleDeleteContent("photo", photo.url)}
                               >
                                 Delete
                               </Button>
@@ -358,7 +331,7 @@ const CMS = () => {
                               <Button 
                                 variant="destructive" 
                                 size="sm"
-                                onClick={() => handleDeleteContent("drawing", drawing.id)}
+                                onClick={() => handleDeleteContent("drawing", drawing.url)}
                               >
                                 Delete
                               </Button>
@@ -413,7 +386,7 @@ const CMS = () => {
                               <Button 
                                 variant="destructive" 
                                 size="sm"
-                                onClick={() => handleDeleteContent("music", track.id)}
+                                onClick={() => handleDeleteContent("music", track.url)}
                               >
                                 Delete
                               </Button>

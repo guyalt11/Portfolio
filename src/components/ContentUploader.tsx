@@ -51,7 +51,6 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
 
       const uploadResult = await uploadResponse.json();
       console.log('Upload result:', uploadResult);
-      console.log('path:', uploadResult.fullPath);
 
       // Then, update the content.json with the new entry
       const contentEntry: ContentEntry = {
