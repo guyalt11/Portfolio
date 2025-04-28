@@ -20,11 +20,6 @@ interface AboutContent {
 }
 
 const Music = () => {
-  const [aboutContent, setAboutContent] = useState<AboutContent>({
-    text: "",
-    dateUpdated: "",
-    backgroundImage: "",
-  });
   const [musicContent, setMusicContent] = useState<ContentItem[]>([]);
 
   useEffect(() => {

@@ -25,7 +25,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!file && !youtubeUrl) {
+    if (!file && !youtubeUrl && contentType !== "about") {
       toast.error("Please select a file or provide a YouTube URL to upload");
       return;
     }
@@ -59,7 +59,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
         fullPath = youtubeUrl;
       }
       // First, upload the file
-      if (contentType !== "music") {
+      if (contentType !== "about" && contentType !== "music") {
         const formData = new FormData();
         formData.append('file', file);
         formData.append('title', title);
@@ -142,6 +142,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
+        {contentType !== "about" && (
         <div className="space-y-2">
           <label htmlFor="file" className="text-sm font-medium">
             File
@@ -170,6 +171,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
             </p>
           )}
         </div>
+      )}
       </div>
       <Button type="submit" disabled={isLoading}>
         {isLoading ? "Uploading..." : "Upload"}

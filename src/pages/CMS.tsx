@@ -22,11 +22,7 @@ interface ContentItem {
 
 const CMS = () => {
   const [activeTab, setActiveTab] = useState("about");
-  const [aboutContent, setAboutContent] = useState({
-    text: "",
-    dateUpdated: "",
-    backgroundImage: "",
-  });
+  const [aboutContent, setAboutContent] = useState<ContentItem[]>([]);
   const [photos, setPhotos] = useState<ContentItem[]>([]);
   const [drawings, setDrawings] = useState<ContentItem[]>([]);
   const [music, setMusic] = useState<ContentItem[]>([]);
@@ -46,9 +42,15 @@ const CMS = () => {
     try {
       const response = await fetch('http://localhost:3001/api/content');
       const data = await response.json();
-      
+
       if (data.about) {
-        setAboutContent(data.about);
+        setAboutContent(data.about.map((item: any, index: number) => ({
+          id: `about-${index}`,
+          type: "about",
+          title: item.title || '',
+          description: item.description || '',
+          dateCreated: item.date || new Date().toISOString()
+        })));
       }
       
       if (data.photos) {
@@ -157,22 +159,22 @@ const CMS = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Current About Content</CardTitle>
-                  <CardDescription>
-                    Last updated: {aboutContent.dateUpdated 
-                      ? new Date(aboutContent.dateUpdated).toLocaleString() 
-                      : "Never"}
-                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-white p-4 rounded-md border">
-                    {aboutContent.text ? (
-                      aboutContent.text.split("\n").map((paragraph, index) => (
-                        <p key={index} className="mb-4">{paragraph}</p>
-                      ))
-                    ) : (
-                      <p className="text-site-gray">No content added yet</p>
-                    )}
-                  </div>
+                  {aboutContent.length === 0 ? (
+                    <p className="text-site-gray">No content added yet</p>
+                  ) : (
+                    <div className="grid grid-cols-1 gap-4">
+                      {aboutContent.map((item) => (
+                        <div key={item.id} className="bg-white rounded-md overflow-hidden shadow-sm">
+                          <div className="p-3">
+                            <h3 className="text-xl font-semibold">{item.title}</h3>
+                            <p className="text-site-gray mt-2">{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
               <Card>
@@ -180,17 +182,13 @@ const CMS = () => {
                   <CardTitle>Background Image</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {aboutContent.backgroundImage ? (
                     <div className="bg-white p-4 rounded-md border">
                       <img 
-                        src={aboutContent.backgroundImage} 
+                        src="http://localhost:3001/uploads/home/background.jpg" 
                         alt="Background" 
                         className="w-full max-h-64 object-cover rounded"
                       />
                     </div>
-                  ) : (
-                    <p className="text-site-gray">No background image set</p>
-                  )}
                 </CardContent>
               </Card>
             </div>

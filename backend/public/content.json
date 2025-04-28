@@ -17,6 +17,12 @@
       "title": "asdf",
       "description": "",
       "date": "2025-04-28T20:31:26.394Z"
+    },
+    {
+      "path": "http://localhost:3001/uploads/photos/1745877474372-686760262.png",
+      "title": "asdf",
+      "description": "asdfasdf",
+      "date": "2025-04-28T21:57:54.990Z"
     }
   ],
   "drawings": [
@@ -27,12 +33,15 @@
       "date": "2025-04-28T12:10:50.000Z"
     }
   ],
-  "about": {
-    "path": "",
-    "title": "asdfasdf",
-    "description": "asdfasdf asdfasdf asdfasdf ",
-    "date": "2025-04-28T14:29:28.385Z"
-  },
+  "about": [
+    {
+      "path": "",
+      "title": "12323",
+      "description": "12312 123123",
+      "date": "2025-04-28T22:24:26.679Z",
+      "dateUpdated": "2025-04-28T22:24:27.261Z"
+    }
+  ],
   "musics": [
     {
       "path": "https://www.youtube.com/embed/MGjsxZqyxjU",
@@ -54,9 +63,9 @@
     },
     {
       "path": "https://www.youtube.com/embed/uA7vUS0--KU",
-      "title": "12312",
-      "description": "",
-      "date": "2025-04-28T21:40:15.514Z"
+      "title": "tset",
+      "description": "1111",
+      "date": "2025-04-28T22:20:38.760Z"
     }
   ]
 }
