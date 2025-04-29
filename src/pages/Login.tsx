@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { login } from "@/services/authService";
 import Navbar from "@/components/Navbar";
+import ParallaxHeader from "@/components/ParallaxHeader";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -26,10 +27,12 @@ const Login = () => {
       setIsLoading(false);
     }
   };
-
+  
+  const backgroundImage = "http://localhost:3001/uploads/home/background.jpg";
+  
   return (
-    <div className="min-h-screen bg-site-light-gray">
-      <Navbar />
+    <div className="min-h-screen">
+      <ParallaxHeader imageUrl={backgroundImage} />
       <div className="flex items-center justify-center min-h-screen p-4">
         <Card className="w-full max-w-lg relative z-10">
           <CardHeader>
@@ -71,6 +74,7 @@ const Login = () => {
           </form>
         </Card>
       </div>
+      <Navbar />
     </div>
   );
 };

@@ -47,13 +47,13 @@ const Music = () => {
       <ParallaxHeader imageUrl={backgroundImage} />
       
       <div className="relative z-10 p-8 md:p-12 lg:p-16 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray">Music</h1>
+        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
         {musicContent.length > 0 ? (
           <div className="grid gap-6">
             {musicContent.map((item) => (
               <div key={item.id} className="p-4 bg-white/50 rounded-lg shadow-sm">
-                <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
+                <h2 className="text-2xl font-semibold mb-2 text-center">{item.title}</h2>
                 {item.description && (
                   <p className="text-gray-600 mb-4">{item.description}</p>
                 )}

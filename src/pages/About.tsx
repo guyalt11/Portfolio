@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ParallaxHeader from "@/components/ParallaxHeader";
 
 interface AboutContent {
+  id: string;
   title: string;
   description: string;
   url: string;
@@ -42,7 +43,7 @@ const About = () => {
       <ParallaxHeader imageUrl={backgroundImage} />
       
       <div className="relative z-10 p-8 md:p-12 lg:p-16 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray">About</h1>
+        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">About</h1>
         
         {aboutContent.length > 0 ? (
           <div className="grid gap-6">
