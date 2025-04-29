@@ -41,20 +41,11 @@ router.post('/', (req, res) => {
     // Read existing content
     const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
     
-    // Handle about type differently
-    if (type === 'about') {
-      content.about = {
-        ...content.about,
-        ...entry,
-        dateUpdated: new Date().toISOString()
-      };
+    // Add new entry to the appropriate type array
+    if (content[type + 's']) {
+      content[type + 's'].push(entry);
     } else {
-      // Add new entry to the appropriate type array
-      if (content[type + 's']) {
-        content[type + 's'].push(entry);
-      } else {
-        content[type + 's'] = [entry];
-      }
+      content[type + 's'] = [entry];
     }
     
     // Write updated content back to file
@@ -82,17 +73,23 @@ router.delete('/', (req, res) => {
     // Remove the entry from content.json
     const typeKey = type + 's';
     if (content[typeKey]) {
-      content[typeKey] = content[typeKey].filter((item: any) => item.path !== filePath);
+      if (type != "about") {
+        content[typeKey] = content[typeKey].filter((item: any) => item.path !== filePath);
+      } else {
+        content[typeKey] = content[typeKey].filter((item: any) => item.title !== filePath);
+      }
       fs.writeFileSync(contentPath, JSON.stringify(content, null, 2));
     }
 
     // Delete the file
-    const fileName = filePath.split('/').pop();
-    const typeDir = type === 'drawing' ? 'drawings' : type + 's';
-    const fullPath = path.join(uploadPath, typeDir, fileName || '');
-    
-    if (fs.existsSync(fullPath)) {
-      fs.unlinkSync(fullPath);
+    if (type != "about") {
+      const fileName = filePath.split('/').pop();
+      const typeDir = type === 'drawing' ? 'drawings' : type + 's';
+      const fullPath = path.join(uploadPath, typeDir, fileName || '');
+      
+      if (fs.existsSync(fullPath)) {
+        fs.unlinkSync(fullPath);
+      }
     }
     
     res.json({ success: true });

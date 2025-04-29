@@ -34,6 +34,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
     try {
       let fullPath = "";
 
+      // First, upload the file
       if (contentType !== "music" && contentType !== "about") {
         const formData = new FormData();
         formData.append('file', file!);
@@ -57,29 +58,6 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
         fullPath = uploadResult.fullPath;
       } else if (contentType === "music") {
         fullPath = youtubeUrl;
-      }
-      // First, upload the file
-      if (contentType !== "about" && contentType !== "music") {
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('title', title);
-        formData.append('description', description);
-
-        console.log('Uploading file with type:', contentType);
-
-        const uploadResponse = await fetch(`http://localhost:3001/api/upload?type=${contentType}`, {
-          method: 'POST',
-          body: formData,
-        });
-
-        if (!uploadResponse.ok) {
-          const errorData = await uploadResponse.json();
-          throw new Error(errorData.message || 'Failed to upload file');
-        }
-
-        const uploadResult = await uploadResponse.json();
-        console.log('Upload result:', uploadResult);
-        fullPath = uploadResult.fullPath;
       }
 
       // Then, update the content.json with the new entry

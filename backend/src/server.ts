@@ -56,21 +56,6 @@ app.get('/api/files/:type', (req, res) => {
   res.json(files);
 });
 
-// Delete a file
-app.delete('/api/files/:type/:filename', (req, res) => {
-  const type = req.params.type;
-  const filename = req.params.filename;
-  const typeDir = type === 'drawing' ? 'drawings' : type + 's';
-  const filePath = path.join(uploadPath, typeDir, filename);
-  
-  if (fs.existsSync(filePath)) {
-    fs.unlinkSync(filePath);
-    res.json({ success: true });
-  } else {
-    res.status(404).json({ error: 'File not found' });
-  }
-});
-
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });

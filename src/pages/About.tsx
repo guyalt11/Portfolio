@@ -11,29 +11,29 @@ interface AboutContent {
 }
 
 const About = () => {
-  const [content, setContent] = useState<any>(null);
+  const [aboutContent, setAboutContent] = useState<AboutContent[]>([]);
 
   useEffect(() => {
     const loadContent = async () => {
       try {
         const response = await fetch('http://localhost:3001/api/content');
         const data = await response.json();
-        setContent(data);
+        
+        if (data.abouts) {
+          setAboutContent(data.abouts.map((item: any, index: number) => ({
+            id: `about-${index}`,
+            type: "about",
+            title: item.title || '',
+            description: item.description || '',
+            dateCreated: item.date || new Date().toISOString()
+          })));
+        }
       } catch (error) {
         console.error("Error loading content:", error);
       }
     };
-
     loadContent();
   }, []);
-
-  const aboutContent = content?.about ? {
-    title: content.about.title,
-    description: content.about.description,
-    url: content.about.path,
-    date: content.about.date,
-    dateUpdated: content.about.dateUpdated
-  } : null;
 
   const backgroundImage = "http://localhost:3001/uploads/home/background.jpg";
   
@@ -44,15 +44,19 @@ const About = () => {
       <div className="relative z-10 p-8 md:p-12 lg:p-16 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray">About</h1>
         
-        {aboutContent ? (
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">{aboutContent.title}</h2>
-              <p className="text-gray-600 whitespace-pre-wrap">{aboutContent.description}</p>
-            </div>
+        {aboutContent.length > 0 ? (
+          <div className="grid gap-6">
+            {aboutContent.map((item) => (
+              <div key={item.id} className="p-4 bg-white/50 rounded-lg shadow-sm break-words overflow-hidden">
+                <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
+                {item.description && (
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                )}
+              </div>
+            ))}
           </div>
         ) : (
-          <p className="text-gray-500">About content not available yet.</p>
+          <p className="text-gray-500">No about content available yet.</p>
         )}
       </div>
       

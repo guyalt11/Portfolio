@@ -13,12 +13,6 @@ interface ContentItem {
   dateCreated: string;
 }
 
-interface AboutContent {
-  text: string;
-  dateUpdated: string;
-  backgroundImage: string;
-}
-
 const Music = () => {
   const [musicContent, setMusicContent] = useState<ContentItem[]>([]);
 

@@ -2,14 +2,12 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/components/ui/use-toast";
-import { getCurrentUser, changePassword, logout } from "@/services/authService";
+import { getCurrentUser, logout } from "@/services/authService";
 import ContentUploader from "@/components/ContentUploader";
 import EditContentModal from "@/components/EditContentModal";
-import { Edit, Upload } from "lucide-react";
+import { Edit } from "lucide-react";
 
 interface ContentItem {
   id: string;
@@ -42,9 +40,8 @@ const CMS = () => {
     try {
       const response = await fetch('http://localhost:3001/api/content');
       const data = await response.json();
-
-      if (data.about) {
-        setAboutContent(data.about.map((item: any, index: number) => ({
+      if (data.abouts) {
+        setAboutContent(data.abouts.map((item: any, index: number) => ({
           id: `about-${index}`,
           type: "about",
           title: item.title || '',
@@ -102,9 +99,8 @@ const CMS = () => {
     setEditModalOpen(true);
   };
 
-  const handleDeleteContent = async (type: "photo" | "drawing" | "music", id: string) => {
+  const handleDeleteContent = async (type: "about" | "photo" | "drawing" | "music", id: string) => {
     try {
-      
       const response = await fetch('http://localhost:3001/api/content', {
         method: 'DELETE',
         headers: {
@@ -170,10 +166,28 @@ const CMS = () => {
                           <div className="p-3">
                             <h3 className="text-xl font-semibold">{item.title}</h3>
                             <p className="text-site-gray mt-2">{item.description}</p>
+                            <div className="flex justify-end mt-2 space-x-2">
+                              <Button 
+                                variant="outline" 
+                                size="sm"
+                                onClick={() => handleOpenEditModal("about", item.title)}
+                              >
+                                <Edit className="h-4 w-4 mr-1" />
+                                Edit
+                              </Button>
+                              <Button 
+                                variant="destructive" 
+                                size="sm"
+                                onClick={() => handleDeleteContent("about", item.title)}
+                              >
+                                Delete
+                              </Button>
+                            </div>
                           </div>
                         </div>
                       ))}
                     </div>
+                    
                   )}
                 </CardContent>
               </Card>
