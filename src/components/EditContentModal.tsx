@@ -59,7 +59,7 @@ const EditContentModal = ({
       
       if (uploadType === "file" && file) {
         // Delete old file and upload new one
-        const deleteResponse = await fetch('http://localhost:3001/api/delete', {
+        const deleteResponse = await fetch('https://portfolio-backend-yeop.onrender.com/api/delete', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const EditContentModal = ({
         formData.append('description', description);
         formData.append('type', contentType);
 
-        const uploadResponse = await fetch('http://localhost:3001/api/upload', {
+        const uploadResponse = await fetch('https://portfolio-backend-yeop.onrender.com/api/upload', {
           method: 'POST',
           body: formData,
         });

@@ -10,7 +10,7 @@ interface Credentials {
   password: string;
 }
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://portfolio-backend-yeop.onrender.com/api';
 
 export const login = async (credentials: Credentials): Promise<User | null> => {
   try {

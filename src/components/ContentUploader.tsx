@@ -43,7 +43,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
 
         console.log('Uploading file with type:', contentType);
 
-        const uploadResponse = await fetch(`http://localhost:3001/api/upload?type=${contentType}`, {
+        const uploadResponse = await fetch(`https://portfolio-backend-yeop.onrender.com/api/upload?type=${contentType}`, {
           method: 'POST',
           body: formData,
         });
@@ -68,7 +68,7 @@ const ContentUploader = ({ contentType, onContentAdded }: ContentUploaderProps) 
         date: new Date().toISOString(),
       };
 
-      const contentResponse = await fetch('http://localhost:3001/api/content', {
+      const contentResponse = await fetch('https://portfolio-backend-yeop.onrender.com/api/content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

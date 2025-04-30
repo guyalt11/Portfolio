@@ -19,7 +19,7 @@ const PhotosCMS = () => {
     const loadContent = async () => {
       try {
         console.log("Fetching content from API...");
-        const response = await fetch('http://localhost:3001/api/content');
+        const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
         const data = await response.json();
         console.log("Raw API Response:", data);
         console.log("Photos array exists:", !!data.photos);
@@ -59,7 +59,7 @@ const PhotosCMS = () => {
       formData.append('type', 'photo');
 
       console.log("Uploading file...");
-      const response = await fetch('http://localhost:3001/api/upload', {
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -76,7 +76,7 @@ const PhotosCMS = () => {
 
       // Reload content after successful upload
       console.log("Fetching updated content...");
-      const newContent = await fetch('http://localhost:3001/api/content').then(res => res.json());
+      const newContent = await fetch('https://portfolio-backend-yeop.onrender.com/api/content').then(res => res.json());
       console.log("Updated content:", newContent);
       setContent(newContent);
       
@@ -96,7 +96,7 @@ const PhotosCMS = () => {
     if (!confirm("Are you sure you want to delete this photo?")) return;
 
     try {
-      const response = await fetch('http://localhost:3001/api/content', {
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const PhotosCMS = () => {
       }
 
       // Reload content after successful delete
-      const newContent = await fetch('http://localhost:3001/api/content').then(res => res.json());
+      const newContent = await fetch('https://portfolio-backend-yeop.onrender.com/api/content').then(res => res.json());
       setContent(newContent);
     } catch (error) {
       console.error("Error deleting photo:", error);

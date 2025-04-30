@@ -38,7 +38,7 @@ const CMS = () => {
 
   const loadContent = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/content');
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
       const data = await response.json();
       if (data.abouts) {
         setAboutContent(data.abouts.map((item: any, index: number) => ({
@@ -101,7 +101,7 @@ const CMS = () => {
 
   const handleDeleteContent = async (type: "about" | "photo" | "drawing" | "music", id: string) => {
     try {
-      const response = await fetch('http://localhost:3001/api/content', {
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -198,7 +198,7 @@ const CMS = () => {
                 <CardContent>
                     <div className="bg-white p-4 rounded-md border">
                       <img 
-                        src="http://localhost:3001/uploads/home/background.jpg" 
+                        src="https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg" 
                         alt="Background" 
                         className="w-full max-h-64 object-cover rounded"
                       />

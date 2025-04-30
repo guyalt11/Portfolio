@@ -19,7 +19,7 @@ const Drawings = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/content');
+        const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
         const data = await response.json();
         setContent(data);
       } catch (error) {
@@ -61,7 +61,7 @@ const Drawings = () => {
   };
 
   const selectedImage = selectedImageIndex !== null ? drawings[selectedImageIndex] : null;
-  const backgroundImage = "http://localhost:3001/uploads/home/background.jpg";
+  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
   
   return (
     <div className="min-h-screen">

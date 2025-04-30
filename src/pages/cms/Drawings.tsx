@@ -18,7 +18,7 @@ const DrawingsCMS = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/content');
+        const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
         const data = await response.json();
         setContent(data);
       } catch (error) {
@@ -53,7 +53,7 @@ const DrawingsCMS = () => {
       formData.append('description', description);
       formData.append('type', 'drawing');
 
-      const response = await fetch('http://localhost:3001/api/upload', {
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -63,7 +63,7 @@ const DrawingsCMS = () => {
       }
 
       // Reload content after successful upload
-      const newContent = await fetch('http://localhost:3001/api/content').then(res => res.json());
+      const newContent = await fetch('https://portfolio-backend-yeop.onrender.com/api/content').then(res => res.json());
       setContent(newContent);
       
       // Reset form
@@ -81,7 +81,7 @@ const DrawingsCMS = () => {
     if (!confirm("Are you sure you want to delete this drawing?")) return;
 
     try {
-      const response = await fetch('http://localhost:3001/api/content', {
+      const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const DrawingsCMS = () => {
       }
 
       // Reload content after successful delete
-      const newContent = await fetch('http://localhost:3001/api/content').then(res => res.json());
+      const newContent = await fetch('https://portfolio-backend-yeop.onrender.com/api/content').then(res => res.json());
       setContent(newContent);
     } catch (error) {
       console.error("Error deleting drawing:", error);
