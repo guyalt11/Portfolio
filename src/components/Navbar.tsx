@@ -42,6 +42,33 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Desktop menu - Only on homepage */}
+      {isHomepage && (
+        <nav
+          className="
+            fixed inset-0 z-10 flex justify-center items-center 
+            bg-gray-800 bg-opacity-50 backdrop-blur-md p-6
+            md:inset-auto md:top-0 md:right-0 md:h-screen md:w-1/2 md:min-w-[400px]
+            md:bg-transparent md:backdrop-blur-0 md:p-0
+            md:justify-center md:items-center
+          "
+        >
+          <ul className="flex flex-col gap-12">
+            {menuItems.filter(item => item.path !== "/login" && item.path !== "/cms").map((item) => (
+              <li key={item.path} className="nav-menu-item">
+                <Link 
+                  to={item.path} 
+                  className="relative text-4xl text-white opacity-75 hover:opacity-100 transition-all duration-300 group py-4 px-8"
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <span className="absolute left-0 right-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       {/* Hamburger menu trigger - shown on all pages */}
       <div className="fixed top-4 right-4 z-50">
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -59,7 +86,7 @@ const Navbar = () => {
             side="right"
             className="w-[300px] rounded-lg bg-white/70 backdrop-blur-sm border-none shadow-lg fixed top-4 right-4 h-auto max-h-[calc(100vh-2rem)]"
           >
-            <nav className="flex flex-col gap-4 py-6">
+            <nav className="flex flex-col gap-4 pt-4">
               {menuItems.map((item) => (
                 <SheetClose asChild key={item.path}>
                   <Link 
@@ -80,77 +107,6 @@ const Navbar = () => {
         </Sheet>
       </div>
 
-      {/* Desktop menu - Only on homepage */}
-      {isHomepage && (
-        <nav className="fixed hidden md:flex top-0 right-0 h-screen w-1/2 flex-col justify-center items-center z-10 min-w-[400px]">
-          <ul className="flex flex-col gap-12">
-            {menuItems.filter(item => item.path !== "/login" && item.path !== "/cms").map((item) => (
-              <li key={item.path} className="nav-menu-item">
-                <Link 
-                  to={item.path} 
-                  className="relative text-4xl text-white opacity-75 hover:opacity-100 transition-all duration-300 group py-4 px-8"
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  <span className="absolute left-0 right-0 bottom-0 h-1 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-
-      <div className="fixed inset-0 z-50 flex md:hidden">
-        <div className="fixed inset-0 bg-black/50" onClick={() => setIsMenuOpen(false)} />
-        <div className="fixed inset-y-0 right-0 w-3/4 bg-white p-6">
-          <div className="flex justify-end">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <X className="h-8 w-8" />
-            </Button>
-          </div>
-          <nav className="mt-6 space-y-6">
-            <Link
-              to="/"
-              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              to="/photos"
-              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Photos
-            </Link>
-            <Link
-              to="/drawings"
-              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Drawings
-            </Link>
-            <Link
-              to="/music"
-              className="block text-3xl font-medium text-gray-900 hover:text-gray-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Music
-            </Link>
-          </nav>
-        </div>
-      </div>
-
       <style>{`
         .nav-menu-item {
           transition: all 0.3s ease;
@@ -163,6 +119,7 @@ const Navbar = () => {
         .nav-menu-item:hover + .nav-menu-item {
           transform: translateY(8px);
         }
+
       `}</style>
     </>
   );
