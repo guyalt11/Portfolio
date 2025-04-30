@@ -2,14 +2,13 @@
     "name": "vite_react_shadcn_ts",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://guyalt11.github.io/Portfolio/",
-    "deploy": "gh-pages -d dist",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
         "build:dev": "vite build --mode development",
         "lint": "eslint .",
+        "deploy": "gh-pages -d dist",
         "preview": "vite preview"
     },
     "dependencies": {
