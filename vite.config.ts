@@ -5,8 +5,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
-    port: 8080,
+    host: "0.0.0.0",
   },
   preview: {
     allowedHosts: ['portfolio-dyis.onrender.com'], 
@@ -20,4 +19,3 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-
