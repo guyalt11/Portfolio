@@ -9,7 +9,7 @@ import Photos from "./pages/Photos";
 import Drawings from "./pages/Drawings";
 import Music from "./pages/Music";
 //import Login from "./pages/Login";
-import CMS from "./pages/CMS";
+//import CMS from "./pages/CMS";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -28,13 +28,13 @@ const App = () => (
           <Route path="/drawings" element={<Drawings />} />
           <Route path="/music" element={<Music />} />
           {/* <Route path="/login" element={<Login />} /> */}
-          <Route 
+          {/*<Route 
             path="/cms" 
             element={
               <ProtectedRoute>
                 <CMS />
               </ProtectedRoute>
-            } 
+            */} 
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
