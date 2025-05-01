@@ -33,7 +33,7 @@ const Navbar = () => {
     { path: "/drawings", label: "Drawings" },
     { path: "/photos", label: "Photos" },
     { path: "/music", label: "Music" },
-    { path: isAdmin ? "/cms" : "/login", label: isAdmin ? "Admin" : "Admin Login" }
+    //{ path: isAdmin ? "/cms" : "/login", label: isAdmin ? "Admin" : "Admin Login" }
   ];
 
   const handleCloseSheet = () => {

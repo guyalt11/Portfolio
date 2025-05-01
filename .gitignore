@@ -1,3 +1,5 @@
 node_modules
-backend
 dist
+src/services/authService.ts
+src/pages/Login.tsx
+src/pages/CMS.tsx

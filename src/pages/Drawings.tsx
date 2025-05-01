@@ -37,6 +37,7 @@ const Drawings = () => {
     title: drawing.title,
     description: drawing.description,
     url: drawing.path,
+    category: drawing.category,
     dateCreated: drawing.date
   })) || [];
 
@@ -63,21 +64,45 @@ const Drawings = () => {
   const selectedImage = selectedImageIndex !== null ? drawings[selectedImageIndex] : null;
   const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
   
+  const categories = ["Oil", "Sketches", "Portraits", "Dumps"];
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  console.log(drawings);
+  const filteredDrawings = drawings.filter(
+    (drawing) => drawing.category === selectedCategory
+  );
+
   return (
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
       
-      <div className="relative z-10 p-8 md:p-12 lg:p-16 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Drawings</h1>
+      <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+        <div className="flex flex-wrap justify-between gap-4 mb-6">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`
+                flex-1 py-1 px-3 sm:py-2 sm:px-4 md:py-3 md:px-6 
+                rounded-full font-bold text-xs sm:text-sm md:text-lg 
+                transition 
+                ${selectedCategory === category ? "bg-site-dark-gray text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}
+              `}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
         
         {drawings.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {drawings.map((drawing, index) => (
-              <div 
-                key={drawing.id} 
-                className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow"
-                onClick={() => setSelectedImageIndex(index)}
-              >
+            {drawings
+              .filter((drawing) => drawing.category === selectedCategory)
+              .map((drawing, index) => (
+                <div 
+                  key={drawing.id} 
+                  className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                  onClick={() => setSelectedImageIndex(index)}
+                >
                 <img 
                   src={drawing.url} 
                   alt={drawing.title} 
