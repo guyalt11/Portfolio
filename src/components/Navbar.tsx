@@ -7,7 +7,7 @@ import {
   SheetClose
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { isAuthenticated } from "@/services/authService";
+//import { isAuthenticated } from "@/services/authService";
 import { useState } from "react";
 
 /**
@@ -17,7 +17,7 @@ import { useState } from "react";
  */
 const Navbar = () => {
   const location = useLocation();
-  const isAdmin = isAuthenticated();
+  //const isAdmin = isAuthenticated();
   const isHomepage = location.pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
