@@ -41,9 +41,19 @@ const Drawings = () => {
     dateCreated: drawing.date
   })) || [];
 
+  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
+  
+  const categories = ["Oil", "Sketches", "Portraits", "Dumps"];
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const filteredDrawings = drawings.filter(
+    (drawing) => drawing.category === selectedCategory
+  );
+
+  const selectedImage = selectedImageIndex !== null ? filteredDrawings[selectedImageIndex] : null;
+  
   const handleNext = () => {
     if (selectedImageIndex !== null) {
-      if (selectedImageIndex === drawings.length - 1) {
+      if (selectedImageIndex === filteredDrawings.length - 1) {
         setSelectedImageIndex(0);
       } else {
         setSelectedImageIndex(selectedImageIndex + 1);
@@ -54,23 +64,12 @@ const Drawings = () => {
   const handlePrevious = () => {
     if (selectedImageIndex !== null) {
       if (selectedImageIndex === 0) {
-        setSelectedImageIndex(drawings.length - 1);
+        setSelectedImageIndex(filteredDrawings.length - 1);
       } else {
         setSelectedImageIndex(selectedImageIndex - 1);
       }
     }
   };
-
-  const selectedImage = selectedImageIndex !== null ? drawings[selectedImageIndex] : null;
-  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
-  
-  const categories = ["Oil", "Sketches", "Portraits", "Dumps"];
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  console.log(drawings);
-  const filteredDrawings = drawings.filter(
-    (drawing) => drawing.category === selectedCategory
-  );
-
   return (
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
