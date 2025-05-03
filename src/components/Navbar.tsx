@@ -10,11 +10,6 @@ import { Button } from "@/components/ui/button";
 //import { isAuthenticated } from "@/services/authService";
 import { useState } from "react";
 
-/**
- * Navigation Component
- * Provides site-wide navigation with responsive design
- * Includes both mobile and desktop layouts with elegant styling
- */
 const Navbar = () => {
   const location = useLocation();
   //const isAdmin = isAuthenticated();
@@ -47,9 +42,9 @@ const Navbar = () => {
         <nav
           className="
             fixed inset-0 z-10 flex justify-center items-center 
-            bg-gray-800 bg-opacity-50 backdrop-blur-md p-6
+            bg-gray-800 bg-opacity-50 p-6
             md:inset-auto md:top-0 md:right-0 md:h-screen md:w-1/2 md:min-w-[400px]
-            md:bg-transparent md:backdrop-blur-0 md:p-0
+            md:bg-transparent md:p-0
             md:justify-center md:items-center
           "
         >
