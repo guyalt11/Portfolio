@@ -62,7 +62,7 @@ const MusicPlayer = ({ tracks }: MusicPlayerProps) => {
                 )}
               </div>
               <button 
-                className="ml-4 p-2 rounded-full bg-site-gray text-white hover:bg-site-dark-gray transition-colors"
+                className="ml-4 p-2 rounded-full bg-site-gray text-site-dark-gray hover:bg-site-dark-gray transition-colors"
                 onClick={(e) => {
                   e.stopPropagation();
                   setCurrentTrack(track);

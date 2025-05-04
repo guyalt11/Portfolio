@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import ParallaxHeader from "@/components/ParallaxHeader";
-import { FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
 
 interface AboutContent {
   id: string;
@@ -74,6 +74,9 @@ const About = () => {
             </a>
             <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#171A21] hover:text-site-dark-gray">
               <FaGithub />
+            </a>
+            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#FF0000] hover:text-[#C13584]">
+              <FaYoutube />
             </a>
           </div>
         </div>
