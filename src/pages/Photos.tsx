@@ -84,7 +84,7 @@ const Photos = () => {
                 flex-1 py-1 px-3 sm:py-2 sm:px-4 md:py-3 md:px-6 
                 rounded-full font-bold text-xs sm:text-sm md:text-lg 
                 transition 
-                ${selectedCategory === category ? "bg-site-dark-gray text-site-dark-gray" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}
+                ${selectedCategory === category ? "bg-site-dark-gray text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}
               `}
             >
               {category}

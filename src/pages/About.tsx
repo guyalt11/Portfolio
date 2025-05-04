@@ -75,7 +75,7 @@ const About = () => {
             <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#171A21] hover:text-site-dark-gray">
               <FaGithub />
             </a>
-            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#FF0000] hover:text-[#C13584]">
+            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#FF0000] hover:text-[#CC0000]">
               <FaYoutube />
             </a>
           </div>
