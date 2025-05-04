@@ -37,12 +37,23 @@ const Photos = () => {
     title: photo.title,
     description: photo.description,
     url: photo.path,
+    category: photo.category,
     dateCreated: photo.date
   })) || [];
 
+  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
+  
+  const categories = ["People", "Urban", "Nature", "BW", "Patterns"];
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const filteredPhotos = photos.filter(
+    (photo) => photo.category === selectedCategory
+  );
+
+  const selectedImage = selectedImageIndex !== null ? filteredPhotos[selectedImageIndex] : null;
+  
   const handleNext = () => {
     if (selectedImageIndex !== null) {
-      if (selectedImageIndex === photos.length - 1) {
+      if (selectedImageIndex === filteredPhotos.length - 1) {
         setSelectedImageIndex(0);
       } else {
         setSelectedImageIndex(selectedImageIndex + 1);
@@ -53,34 +64,47 @@ const Photos = () => {
   const handlePrevious = () => {
     if (selectedImageIndex !== null) {
       if (selectedImageIndex === 0) {
-        setSelectedImageIndex(photos.length - 1);
+        setSelectedImageIndex(filteredPhotos.length - 1);
       } else {
         setSelectedImageIndex(selectedImageIndex - 1);
       }
     }
   };
-
-  const selectedImage = selectedImageIndex !== null ? photos[selectedImageIndex] : null;
-  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
-
   return (
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
       
       <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Photos</h1>
+        <div className="flex flex-wrap justify-between gap-4 mb-6">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`
+                flex-1 py-1 px-3 sm:py-2 sm:px-4 md:py-3 md:px-6 
+                rounded-full font-bold text-xs sm:text-sm md:text-lg 
+                transition 
+                ${selectedCategory === category ? "bg-site-dark-gray text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}
+              `}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
         
         {photos.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {photos.map((photo, index) => (
-              <div 
-                key={photo.id} 
-                className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow"
-                onClick={() => setSelectedImageIndex(index)}
-              >
-                <img
-                  src={photo.url}
-                  alt={photo.title}
+            {photos
+              .filter((photo) => photo.category === selectedCategory)
+              .map((photo, index) => (
+                <div 
+                  key={photo.id} 
+                  className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                  onClick={() => setSelectedImageIndex(index)}
+                >
+                <img 
+                  src={photo.url} 
+                  alt={photo.title} 
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
