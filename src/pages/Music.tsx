@@ -46,19 +46,15 @@ const Music = () => {
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
       
-      <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+      <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
         {musicContent.length > 0 ? (
-          <div className="grid gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {musicContent.map((item) => (
               <div key={item.id} className="p-4 bg-white/50 rounded-lg shadow-sm">
-                <h2 className="text-2xl font-semibold mb-2 text-center">{item.title}</h2>
-                {item.description && (
-                  <p className="text-gray-600 mb-4">{item.description}</p>
-                )}
                 {item.youtubeUrl && (
-                  <div className="aspect-video w-full max-w-2xl mx-auto">
+                  <div className="aspect-video w-full max-w-2xl mx-auto mb-4">
                     <iframe
                       src={item.youtubeUrl}
                       title={item.title}
@@ -77,6 +73,10 @@ const Music = () => {
                   >
                     View Sheet Music
                   </a>
+                )}
+                <h2 className="text-2xl font-semibold mb-2 text-center">{item.title}</h2>
+                {item.description && (
+                  <p className="text-gray-600 mb-4">{item.description}</p>
                 )}
               </div>
             ))}

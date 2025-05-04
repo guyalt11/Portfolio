@@ -74,7 +74,7 @@ const Photos = () => {
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
       
-      <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+      <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <div className="flex flex-wrap justify-between gap-4 mb-6">
           {categories.map((category) => (
             <button
@@ -93,7 +93,7 @@ const Photos = () => {
         </div>
         
         {photos.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {photos
               .filter((photo) => photo.category === selectedCategory)
               .map((photo, index) => (

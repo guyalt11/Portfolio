@@ -43,7 +43,7 @@ const Drawings = () => {
 
   const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
   
-  const categories = ["Oil", "Sketches", "Portraits", "Dumps"];
+  const categories = ["Sketches", "Portraits", "Oil", "Dumps"];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const filteredDrawings = drawings.filter(
     (drawing) => drawing.category === selectedCategory
@@ -74,7 +74,7 @@ const Drawings = () => {
     <div className="min-h-screen">
       <ParallaxHeader imageUrl={backgroundImage} />
       
-      <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+      <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <div className="flex flex-wrap justify-between gap-4 mb-6">
           {categories.map((category) => (
             <button
@@ -93,7 +93,7 @@ const Drawings = () => {
         </div>
         
         {drawings.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {drawings
               .filter((drawing) => drawing.category === selectedCategory)
               .map((drawing, index) => (

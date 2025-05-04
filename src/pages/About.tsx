@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import ParallaxHeader from "@/components/ParallaxHeader";
+import { FaInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 interface AboutContent {
   id: string;
@@ -49,9 +50,9 @@ const About = () => {
           <div className="grid gap-6">
             {aboutContent.map((item) => (
               <div key={item.id} className="p-4 bg-white/50 rounded-lg shadow-sm break-words overflow-hidden">
-                <h2 className="text-2xl font-semibold mb-2">{item.title}</h2>
+                <h2 className="text-2xl font-semibold mb-4">{item.title}</h2>
                 {item.description && (
-                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <div className="text-gray-600 mb-4 whitespace-pre-line break-words w-full">{item.description}</div>
                 )}
               </div>
             ))}
@@ -59,6 +60,23 @@ const About = () => {
         ) : (
           <p className="text-gray-500">No about content available yet.</p>
         )}
+        {/* Social Media Icons*/}
+        <div className="mt-8 text-center">
+          <div className="flex justify-center space-x-6">
+            <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#E1306C] hover:text-[#C13584]">
+              <FaInstagram />
+            </a>
+            <a href="https://www.facebook.com/guy.altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#3B5998] hover:text-[#2E4885]">
+              <FaFacebook />
+            </a>
+            <a href="https://www.linkedin.com/in/guy-altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#0077B6] hover:text-[#005580]">
+              <FaLinkedin />
+            </a>
+            <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#171A21] hover:text-site-dark-gray">
+              <FaGithub />
+            </a>
+          </div>
+        </div>
       </div>
       
       <Navbar />
