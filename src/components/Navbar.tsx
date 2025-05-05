@@ -60,11 +60,11 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.path}
-                    className="relative text-4xl text-site-dark-gray transition-all duration-300 group py-4 px-8"
+                    className="relative text-4xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
                     style={{ opacity }}
                   >
                     <span className="relative z-10">{item.label}</span>
-                    <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-site-dark-gray transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                    <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-white md:bg-site-dark-gray transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                   </Link>
                 </li>
               );
@@ -79,7 +79,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="lg"
-              className="text-site-dark-gray hover:bg-white/10 transition-all duration-300 h-12 w-12 p-2"
+              className="text-white md:text-site-dark-gray hover:bg-white/10 transition-all duration-300 h-12 w-12 p-2"
             >
               <Menu className="h-8 w-8" />
               <span className="sr-only">Open menu</span>
