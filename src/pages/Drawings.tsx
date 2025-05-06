@@ -43,7 +43,7 @@ const Drawings = () => {
 
   const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
   
-  const categories = ["Portraits", "Sketches", "Oil", "Dumps"];
+  const categories = ["Portraits", "Pencil", "Colors", "Dumps"];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const filteredDrawings = drawings.filter(
     (drawing) => drawing.category === selectedCategory
