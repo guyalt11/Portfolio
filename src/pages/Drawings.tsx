@@ -108,7 +108,9 @@ const Drawings = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-medium mb-2 text-center">{drawing.title}</h3>
+                  {drawing.title && (
+                    <h3 className="text-lg font-medium mb-2 text-center">{drawing.title}</h3>
+                  )}
                   {drawing.description && (
                     <p className="text-gray-600">{drawing.description}</p>
                   )}

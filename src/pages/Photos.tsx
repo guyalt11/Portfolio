@@ -43,7 +43,7 @@ const Photos = () => {
 
   const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
   
-  const categories = ["People", "Urban", "Nature", "B&W", "Patterns"];
+  const categories = ["People", "Urban", "Nature", "B&W", "Textures"];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const filteredPhotos = photos.filter(
     (photo) => photo.category === selectedCategory
@@ -108,7 +108,9 @@ const Photos = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-medium mb-2 text-center">{photo.title}</h3>
+                  {photo.title && (
+                    <h3 className="text-lg font-medium mb-2 text-center">{photo.title}</h3>
+                  )}
                   {photo.description && (
                     <p className="text-gray-600">{photo.description}</p>
                   )}
