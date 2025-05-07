@@ -75,6 +75,7 @@ const Photos = () => {
       <ParallaxHeader imageUrl={backgroundImage} />
       
       <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+        <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Photos</h1>
         <div className="flex flex-wrap justify-between gap-4 mb-6">
           {categories.map((category) => (
             <button
