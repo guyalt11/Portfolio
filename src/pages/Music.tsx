@@ -44,8 +44,10 @@ const Music = () => {
   
   return (
     <div className="min-h-screen">
-      <ParallaxHeader imageUrl={backgroundImage} />
-      
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-fixed z-0" 
+        style={{ backgroundImage: `url(${backgroundImage})` }} 
+      />
       <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
