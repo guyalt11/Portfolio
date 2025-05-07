@@ -102,7 +102,7 @@ const Drawings = () => {
               .map((drawing, index) => (
                 <div 
                   key={drawing.id} 
-                  className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-md transition-shadow"
+                  className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow"
                   onClick={() => setSelectedImageIndex(index)}
                 >
                 <img 
