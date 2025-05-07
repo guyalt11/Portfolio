@@ -18,7 +18,7 @@ const About = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('/uploads/content.json');
+        const response = await fetch('content.json');
         const data = await response.json();
         
         if (data.abouts) {

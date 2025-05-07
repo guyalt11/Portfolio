@@ -19,7 +19,7 @@ const Drawings = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('/uploads/content.json');
+        const response = await fetch('content.json');
         const data = await response.json();
         setContent(data);
       } catch (error) {
