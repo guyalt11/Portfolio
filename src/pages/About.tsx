@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { useEffect, useState } from "react";
 import ParallaxHeader from "@/components/ParallaxHeader";
-import { FaInstagram, FaFacebook, FaLinkedin, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin, FaGithub, FaYoutube, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
 interface AboutContent {
   id: string;
@@ -79,6 +79,21 @@ const About = () => {
             </a>
             <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#FF0000] hover:text-[#CC0000]">
               <FaYoutube />
+            </a>
+            <a
+              href="mailto:guyalt11@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png"
+                alt="Gmail"
+                className="w-8 h-8 transition duration-200 group-hover:brightness-90"
+              />
+            </a>
+            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#25D366] hover:text-[#128C7E]">
+              <FaWhatsapp />
             </a>
           </div>
         </div>

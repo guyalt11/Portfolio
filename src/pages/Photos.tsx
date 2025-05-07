@@ -78,20 +78,21 @@ const Photos = () => {
       />
       <div className="relative z-10 p-8 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Photos</h1>
-        <div className="flex flex-wrap justify-between gap-4 mb-6">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`
-                flex-1 py-1 px-3 sm:py-2 sm:px-4 md:py-3 md:px-6 
-                rounded-full font-bold text-xs sm:text-sm md:text-lg 
-                transition 
-                ${selectedCategory === category ? "bg-site-dark-gray text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}
-              `}
-            >
-              {category}
-            </button>
+        <div className="flex flex-wrap justify-center gap-2 mb-6 text-sm sm:text-base md:text-lg font-semibold">
+          {categories.map((category, index) => (
+            <span key={category} className="flex items-center">
+              <button
+                onClick={() => setSelectedCategory(category)}
+                className={`transition border-b-2 ${
+                  selectedCategory === category
+                    ? "border-site-dark-gray text-site-dark-gray"
+                    : "border-transparent hover:border-gray-400 text-gray-700"
+                }`}
+              >
+                {category}
+              </button>
+              {index < categories.length - 1 && <span className="mx-2 text-gray-400">|</span>}
+            </span>
           ))}
         </div>
         
