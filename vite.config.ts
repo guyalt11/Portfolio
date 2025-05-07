@@ -7,9 +7,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
   },
-  preview: {
-    allowedHosts: ['portfolio-dyis.onrender.com'], 
-  },
   plugins: [
     react(),
   ].filter(Boolean),
