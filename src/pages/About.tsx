@@ -37,7 +37,7 @@ const About = () => {
     loadContent();
   }, []);
 
-  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
+  const backgroundImage = "/uploads/home/background.jpg";
   
   return (
     <div className="min-h-screen">
