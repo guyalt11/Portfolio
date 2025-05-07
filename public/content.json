@@ -1,665 +1,665 @@
 {
   "photos": [
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359209353-49101560.jpg",
+      "path": "/uploads/photos/1746359209353-49101560.jpg",
       "title": "Budapest",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:46:49.059Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359229765-150363559.jpg",
+      "path": "/uploads/photos/1746359229765-150363559.jpg",
       "title": "Estonia",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:47:09.995Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359246212-65844444.jpg",
+      "path": "/uploads/photos/1746359246212-65844444.jpg",
       "title": "Germany",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:47:26.364Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359547841-40874748.jpg",
+      "path": "/uploads/photos/1746359547841-40874748.jpg",
       "title": "Porto",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:52:28.179Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359559980-312794243.jpg",
+      "path": "/uploads/photos/1746359559980-312794243.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:52:40.173Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359625705-810594390.jpg",
+      "path": "/uploads/photos/1746359625705-810594390.jpg",
       "title": "Zürich",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:53:45.888Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359665677-323077893.jpg",
+      "path": "/uploads/photos/1746359665677-323077893.jpg",
       "title": "Amsterdam",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:54:25.149Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359710122-403238175.jpg",
+      "path": "/uploads/photos/1746359710122-403238175.jpg",
       "title": "Rotterdam (1)",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:55:10.402Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359718604-687703552.jpg",
+      "path": "/uploads/photos/1746359718604-687703552.jpg",
       "title": "Rotterdam (2)",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:55:18.839Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359729235-135635848.jpg",
+      "path": "/uploads/photos/1746359729235-135635848.jpg",
       "title": "Rotterdam (3)",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:55:29.521Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746359738551-930947839.jpg",
+      "path": "/uploads/photos/1746359738551-930947839.jpg",
       "title": "Paris",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T11:55:38.312Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364073522-749147003.jpg",
+      "path": "/uploads/photos/1746364073522-749147003.jpg",
       "title": "Basel",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T13:07:53.519Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371510194-836119296.jpg",
+      "path": "/uploads/photos/1746371510194-836119296.jpg",
       "title": "Negev",
       "description": "",
       "category": "B&W",
       "date": "2025-05-04T15:11:50.717Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364572229-58150676.jpg",
+      "path": "/uploads/photos/1746364572229-58150676.jpg",
       "title": "Zürich",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:16:11.753Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364749064-213174406.jpg",
+      "path": "/uploads/photos/1746364749064-213174406.jpg",
       "title": "Basel",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:19:08.817Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364759569-689122502.jpg",
+      "path": "/uploads/photos/1746364759569-689122502.jpg",
       "title": "Bern (1)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:19:19.537Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364766345-753946219.jpg",
+      "path": "/uploads/photos/1746364766345-753946219.jpg",
       "title": "Bern (2)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:19:26.372Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364773355-653126816.jpg",
+      "path": "/uploads/photos/1746364773355-653126816.jpg",
       "title": "Bern (3)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:19:32.967Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364936689-500558960.jpg",
+      "path": "/uploads/photos/1746364936689-500558960.jpg",
       "title": "Istán",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:22:16.274Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746364990825-24585382.jpg",
+      "path": "/uploads/photos/1746364990825-24585382.jpg",
       "title": "Portugal (1)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:23:10.854Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365008968-282258368.jpg",
+      "path": "/uploads/photos/1746365008968-282258368.jpg",
       "title": "Portugal (2)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:23:28.679Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365203282-170344162.jpg",
+      "path": "/uploads/photos/1746365203282-170344162.jpg",
       "title": "Bottmingen",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:26:42.980Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365226548-311450502.jpg",
+      "path": "/uploads/photos/1746365226548-311450502.jpg",
       "title": "Fribourg",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:27:06.738Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365238251-841105545.jpg",
+      "path": "/uploads/photos/1746365238251-841105545.jpg",
       "title": "Amsterdam (1)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:27:18.001Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365246555-361204835.jpg",
+      "path": "/uploads/photos/1746365246555-361204835.jpg",
       "title": "Amsterdam (2)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:27:26.459Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365255949-310989471.jpg",
+      "path": "/uploads/photos/1746365255949-310989471.jpg",
       "title": "Tel Aviv (1)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:27:36.084Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365272738-163120893.jpg",
+      "path": "/uploads/photos/1746365272738-163120893.jpg",
       "title": "Tel Aviv (2)",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:27:52.528Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365293131-31348280.jpg",
+      "path": "/uploads/photos/1746365293131-31348280.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:28:12.613Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365389657-866723536.jpg",
+      "path": "/uploads/photos/1746365389657-866723536.jpg",
       "title": "Monteverde",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:29:49.782Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746365433060-534403964.jpg",
+      "path": "/uploads/photos/1746365433060-534403964.jpg",
       "title": "Seyðisfjörður",
       "description": "",
       "category": "Urban",
       "date": "2025-05-04T13:30:32.698Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366279140-246344145.jpg",
+      "path": "/uploads/photos/1746366279140-246344145.jpg",
       "title": "JAMD Staircase",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:44:39.486Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366341755-630561589.jpg",
+      "path": "/uploads/photos/1746366341755-630561589.jpg",
       "title": "Wall reflects on Piano",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:45:41.900Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366356688-387920932.jpg",
+      "path": "/uploads/photos/1746366356688-387920932.jpg",
       "title": "Room's corner",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:45:56.328Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366366388-994675188.jpg",
+      "path": "/uploads/photos/1746366366388-994675188.jpg",
       "title": "Spanish bridge",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:46:06.294Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366392009-670519020.jpg",
+      "path": "/uploads/photos/1746366392009-670519020.jpg",
       "title": "Sunshade",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:46:31.739Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366468679-660388825.jpg",
+      "path": "/uploads/photos/1746366468679-660388825.jpg",
       "title": "Raindrops",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:47:48.658Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366488608-611722185.jpg",
+      "path": "/uploads/photos/1746366488608-611722185.jpg",
       "title": "Underground",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:48:08.383Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366495985-369487097.jpg",
+      "path": "/uploads/photos/1746366495985-369487097.jpg",
       "title": "Airport",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:48:15.840Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366506855-182466736.jpg",
+      "path": "/uploads/photos/1746366506855-182466736.jpg",
       "title": "Bike tunnel",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:48:26.980Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366524997-720299456.jpg",
+      "path": "/uploads/photos/1746366524997-720299456.jpg",
       "title": "Frosty leaves",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:48:44.814Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366539992-723958038.jpg",
+      "path": "/uploads/photos/1746366539992-723958038.jpg",
       "title": "Autumn leaves",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:49:00.088Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366298193-389873055.jpg",
+      "path": "/uploads/photos/1746366298193-389873055.jpg",
       "title": "Swiss log",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:44:58.164Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366575704-396129178.jpg",
+      "path": "/uploads/photos/1746366575704-396129178.jpg",
       "title": "Light painting (1)",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:49:35.766Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746366585703-422689758.jpg",
+      "path": "/uploads/photos/1746366585703-422689758.jpg",
       "title": "Light painting (2)",
       "description": "",
       "category": "Textures",
       "date": "2025-05-04T13:49:45.254Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370802195-483585194.jpg",
+      "path": "/uploads/photos/1746370802195-483585194.jpg",
       "title": "Viljandi Folk Music Festival",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:00:02.786Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370832482-366223771.jpg",
+      "path": "/uploads/photos/1746370832482-366223771.jpg",
       "title": "After hours",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:00:32.879Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370868940-879331681.jpg",
+      "path": "/uploads/photos/1746370868940-879331681.jpg",
       "title": "Vinyl display",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:01:09.451Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370884965-428184368.jpg",
+      "path": "/uploads/photos/1746370884965-428184368.jpg",
       "title": "The National Gallery",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:01:24.599Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370928167-164427120.jpg",
+      "path": "/uploads/photos/1746370928167-164427120.jpg",
       "title": "Avishai Cohen's concert",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:02:08.249Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370969793-542448378.jpg",
+      "path": "/uploads/photos/1746370969793-542448378.jpg",
       "title": "Home piano",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:02:50.285Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746370990946-448217967.jpg",
+      "path": "/uploads/photos/1746370990946-448217967.jpg",
       "title": "Hanging",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:03:10.785Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371003667-807126905.jpg",
+      "path": "/uploads/photos/1746371003667-807126905.jpg",
       "title": "Kickin'",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:03:24.172Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371061475-260547637.jpg",
+      "path": "/uploads/photos/1746371061475-260547637.jpg",
       "title": "Falling leaves",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:04:21.527Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371071488-283063742.jpg",
+      "path": "/uploads/photos/1746371071488-283063742.jpg",
       "title": "Sunset hours",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:04:31.960Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371109924-983960264.jpg",
+      "path": "/uploads/photos/1746371109924-983960264.jpg",
       "title": "Plane wreck",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:05:08.971Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371132173-731889967.jpg",
+      "path": "/uploads/photos/1746371132173-731889967.jpg",
       "title": "Exploring Benches",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:05:32.371Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371143727-283982638.jpg",
+      "path": "/uploads/photos/1746371143727-283982638.jpg",
       "title": "Routine",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:05:42.770Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371170653-993223316.jpg",
+      "path": "/uploads/photos/1746371170653-993223316.jpg",
       "title": "Parliament",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:06:11.017Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371222697-590429918.jpg",
+      "path": "/uploads/photos/1746371222697-590429918.jpg",
       "title": "Wanderers above the Sea",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:07:02.284Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746435831143-892207738.jpg",
+      "path": "/uploads/photos/1746435831143-892207738.jpg",
       "title": "Winter days",
       "description": "",
       "category": "People",
       "date": "2025-05-05T09:03:50.608Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371239147-183440123.jpg",
+      "path": "/uploads/photos/1746371239147-183440123.jpg",
       "title": "Summer days",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:07:19.577Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371250811-227378430.JPG",
+      "path": "/uploads/photos/1746371250811-227378430.JPG",
       "title": "Bolivia",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:07:30.130Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746371257342-25550374.jpg",
+      "path": "/uploads/photos/1746371257342-25550374.jpg",
       "title": "Raining fire",
       "description": "",
       "category": "People",
       "date": "2025-05-04T15:07:36.974Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374437008-793539931.jpg",
+      "path": "/uploads/photos/1746374437008-793539931.jpg",
       "title": "Iceland (1)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:00:36.939Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374448281-716396650.jpg",
+      "path": "/uploads/photos/1746374448281-716396650.jpg",
       "title": "Iceland (2)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:00:48.577Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374453770-593203297.jpg",
+      "path": "/uploads/photos/1746374453770-593203297.jpg",
       "title": "Iceland (3)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:00:54.246Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374460616-61591409.jpg",
+      "path": "/uploads/photos/1746374460616-61591409.jpg",
       "title": "Iceland (4)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:00.822Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374468422-642162828.jpg",
+      "path": "/uploads/photos/1746374468422-642162828.jpg",
       "title": "Iceland (5)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:08.716Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374478007-512586016.jpg",
+      "path": "/uploads/photos/1746374478007-512586016.jpg",
       "title": "Iceland (6)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:18.620Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374488320-287664107.jpg",
+      "path": "/uploads/photos/1746374488320-287664107.jpg",
       "title": "Hungary",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:29.023Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374502781-933105366.jpg",
+      "path": "/uploads/photos/1746374502781-933105366.jpg",
       "title": "Outer space",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:43.068Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374509645-860920725.jpg",
+      "path": "/uploads/photos/1746374509645-860920725.jpg",
       "title": "Mexico",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:01:50.101Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374521741-718518915.JPG",
+      "path": "/uploads/photos/1746374521741-718518915.JPG",
       "title": "Bolivia (1)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:02:02.473Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374541670-233786859.JPG",
+      "path": "/uploads/photos/1746374541670-233786859.JPG",
       "title": "Bolivia (2)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:02:22.127Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374549691-177269772.jpg",
+      "path": "/uploads/photos/1746374549691-177269772.jpg",
       "title": "Bolivia (3)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:02:30.258Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374561368-100820310.jpg",
+      "path": "/uploads/photos/1746374561368-100820310.jpg",
       "title": "Bolivia (4)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:02:41.275Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374569633-946783635.jpg",
+      "path": "/uploads/photos/1746374569633-946783635.jpg",
       "title": "Peru",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:02:49.719Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374603840-326379743.jpg",
+      "path": "/uploads/photos/1746374603840-326379743.jpg",
       "title": "Chile (1)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:03:24.156Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374609178-376746149.JPG",
+      "path": "/uploads/photos/1746374609178-376746149.JPG",
       "title": "Chile (2)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:03:29.577Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374625793-600326021.jpg",
+      "path": "/uploads/photos/1746374625793-600326021.jpg",
       "title": "Denmark",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:03:45.926Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374637470-615797686.jpg",
+      "path": "/uploads/photos/1746374637470-615797686.jpg",
       "title": "Netherlands",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:03:57.733Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374663478-979095339.jpg",
+      "path": "/uploads/photos/1746374663478-979095339.jpg",
       "title": "Switzerland (1)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:04:23.656Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374672730-771687822.jpg",
+      "path": "/uploads/photos/1746374672730-771687822.jpg",
       "title": "Switzerland (2)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:04:32.926Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374677849-549969280.jpg",
+      "path": "/uploads/photos/1746374677849-549969280.jpg",
       "title": "Switzerland (3)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:04:38.112Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374687243-71876926.jpg",
+      "path": "/uploads/photos/1746374687243-71876926.jpg",
       "title": "Switzerland (4)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:04:47.620Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374700519-878150045.jpg",
+      "path": "/uploads/photos/1746374700519-878150045.jpg",
       "title": "Switzerland (5)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:05:00.674Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374715507-521885331.jpg",
+      "path": "/uploads/photos/1746374715507-521885331.jpg",
       "title": "Switzerland (6)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:05:15.682Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374739280-607613770.jpg",
+      "path": "/uploads/photos/1746374739280-607613770.jpg",
       "title": "Switzerland (7)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:05:39.417Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374745868-520183650.jpg",
+      "path": "/uploads/photos/1746374745868-520183650.jpg",
       "title": "Switzerland (8)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:05:46.138Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374835179-622124732.jpg",
+      "path": "/uploads/photos/1746374835179-622124732.jpg",
       "title": "Switzerland (9)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:07:15.407Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374842365-55948505.jpg",
+      "path": "/uploads/photos/1746374842365-55948505.jpg",
       "title": "Switzerland (10)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:07:22.593Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374855016-562445893.jpg",
+      "path": "/uploads/photos/1746374855016-562445893.jpg",
       "title": "Estonia (1)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:07:35.041Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374861674-974816736.jpg",
+      "path": "/uploads/photos/1746374861674-974816736.jpg",
       "title": "Estonia (2)",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:07:41.710Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374929107-345822714.jpg",
+      "path": "/uploads/photos/1746374929107-345822714.jpg",
       "title": "Germany",
       "description": "",
       "category": "Nature",
       "date": "2025-05-04T16:08:49.195Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/photos/1746374935136-782160570.jpg",
+      "path": "/uploads/photos/1746374935136-782160570.jpg",
       "title": "Spain",
       "description": "",
       "category": "Nature",
@@ -668,644 +668,644 @@
   ],
   "drawings": [
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101607632-888334009.jpg",
+      "path": "/uploads/drawings/1746101607632-888334009.jpg",
       "title": "Alice",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:13:27.336Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101637275-776413378.jpg",
+      "path": "/uploads/drawings/1746101637275-776413378.jpg",
       "title": "Artemis",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:13:56.886Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101666404-606147020.jpg",
+      "path": "/uploads/drawings/1746101666404-606147020.jpg",
       "title": "Àstrid",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:14:26.002Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101770582-413859868.jpg",
+      "path": "/uploads/drawings/1746101770582-413859868.jpg",
       "title": "Boo",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:16:10.197Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101818238-680635615.jpg",
+      "path": "/uploads/drawings/1746101818238-680635615.jpg",
       "title": "Film",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:16:58.298Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746101935351-80822566.jpg",
+      "path": "/uploads/drawings/1746101935351-80822566.jpg",
       "title": "Dunuwas (WIP)",
       "description": "",
       "category": "Colors",
       "date": "2025-05-01T12:18:55.109Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102209686-594595325.jpg",
+      "path": "/uploads/drawings/1746102209686-594595325.jpg",
       "title": "Ana",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:23:29.627Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102272180-423680947.jpg",
+      "path": "/uploads/drawings/1746102272180-423680947.jpg",
       "title": "Keira",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:24:31.990Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102288761-915621414.jpg",
+      "path": "/uploads/drawings/1746102288761-915621414.jpg",
       "title": "Ana",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:24:48.994Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102323206-221718519.jpg",
+      "path": "/uploads/drawings/1746102323206-221718519.jpg",
       "title": "Adva",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:25:23.416Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102756466-986691139.jpg",
+      "path": "/uploads/drawings/1746102756466-986691139.jpg",
       "title": "Jane Doe",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:32:36.811Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102818911-55899476.jpg",
+      "path": "/uploads/drawings/1746102818911-55899476.jpg",
       "title": "Einav",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:33:38.960Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102842048-989316352.jpg",
+      "path": "/uploads/drawings/1746102842048-989316352.jpg",
       "title": "Jessica",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:34:01.608Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102853438-757445478.jpg",
+      "path": "/uploads/drawings/1746102853438-757445478.jpg",
       "title": "Sarah",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:34:13.527Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102895365-443690932.jpg",
+      "path": "/uploads/drawings/1746102895365-443690932.jpg",
       "title": "Diana",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:34:55.704Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102917500-270341987.jpg",
+      "path": "/uploads/drawings/1746102917500-270341987.jpg",
       "title": "Penélope ",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:35:17.439Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102950486-342629956.jpg",
+      "path": "/uploads/drawings/1746102950486-342629956.jpg",
       "title": "Àstrid",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:35:50.404Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102957475-826638550.jpg",
+      "path": "/uploads/drawings/1746102957475-826638550.jpg",
       "title": "Sheleg",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:35:57.654Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746102971229-945766027.jpg",
+      "path": "/uploads/drawings/1746102971229-945766027.jpg",
       "title": "Magi",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-01T12:36:10.643Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573689866-922690748.jpg",
+      "path": "/uploads/drawings/1746573689866-922690748.jpg",
       "title": "Madrid",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:21:29.843Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573695576-114830087.jpg",
+      "path": "/uploads/drawings/1746573695576-114830087.jpg",
       "title": "Basel",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:21:35.581Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573701172-977924710.jpg",
+      "path": "/uploads/drawings/1746573701172-977924710.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:21:41.149Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573706773-617284712.jpg",
+      "path": "/uploads/drawings/1746573706773-617284712.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:21:46.789Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573712461-452041279.jpg",
+      "path": "/uploads/drawings/1746573712461-452041279.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:21:52.526Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573721894-821574241.jpg",
+      "path": "/uploads/drawings/1746573721894-821574241.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:22:01.970Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573733449-555368088.jpg",
+      "path": "/uploads/drawings/1746573733449-555368088.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:22:13.503Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573781234-169986423.jpg",
+      "path": "/uploads/drawings/1746573781234-169986423.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:01.262Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573797447-932038342.jpg",
+      "path": "/uploads/drawings/1746573797447-932038342.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:17.390Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573803044-114454609.jpg",
+      "path": "/uploads/drawings/1746573803044-114454609.jpg",
       "title": "Basel",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:23.028Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573809564-334338027.jpg",
+      "path": "/uploads/drawings/1746573809564-334338027.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:29.575Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573825077-207205116.jpg",
+      "path": "/uploads/drawings/1746573825077-207205116.jpg",
       "title": "Copenhagen",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:45.022Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573831332-633411498.jpg",
+      "path": "/uploads/drawings/1746573831332-633411498.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:51.348Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573837057-896156722.jpg",
+      "path": "/uploads/drawings/1746573837057-896156722.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:23:57.078Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573843508-713445418.jpg",
+      "path": "/uploads/drawings/1746573843508-713445418.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:03.539Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573859078-649366136.jpg",
+      "path": "/uploads/drawings/1746573859078-649366136.jpg",
       "title": "Jerusalem",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:19.043Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573865722-229127427.jpg",
+      "path": "/uploads/drawings/1746573865722-229127427.jpg",
       "title": "Madrid",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:25.704Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573870941-26070547.jpg",
+      "path": "/uploads/drawings/1746573870941-26070547.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:31.014Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573876762-477177772.jpg",
+      "path": "/uploads/drawings/1746573876762-477177772.jpg",
       "title": "London",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:36.862Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573887641-672813990.jpg",
+      "path": "/uploads/drawings/1746573887641-672813990.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:47.623Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573892490-3901701.jpg",
+      "path": "/uploads/drawings/1746573892490-3901701.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:52.467Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573896380-904020822.jpg",
+      "path": "/uploads/drawings/1746573896380-904020822.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:56.358Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573899921-932310109.jpg",
+      "path": "/uploads/drawings/1746573899921-932310109.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:24:59.913Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573904773-528490729.jpg",
+      "path": "/uploads/drawings/1746573904773-528490729.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:04.824Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573909006-139076387.jpg",
+      "path": "/uploads/drawings/1746573909006-139076387.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:09.046Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573918239-259968507.jpg",
+      "path": "/uploads/drawings/1746573918239-259968507.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:18.221Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573923743-912813966.jpg",
+      "path": "/uploads/drawings/1746573923743-912813966.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:23.773Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573927720-490750293.jpg",
+      "path": "/uploads/drawings/1746573927720-490750293.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:27.753Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573931816-630288149.jpg",
+      "path": "/uploads/drawings/1746573931816-630288149.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:31.870Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573936630-335743133.jpg",
+      "path": "/uploads/drawings/1746573936630-335743133.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:36.714Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746573941732-360630353.jpg",
+      "path": "/uploads/drawings/1746573941732-360630353.jpg",
       "title": "",
       "description": "",
       "category": "Pencil",
       "date": "2025-05-06T23:25:41.822Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574299607-892836920.jpg",
+      "path": "/uploads/drawings/1746574299607-892836920.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:31:39.640Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574304429-434350830.jpg",
+      "path": "/uploads/drawings/1746574304429-434350830.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:31:44.446Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574322133-269027211.jpg",
+      "path": "/uploads/drawings/1746574322133-269027211.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:02.164Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574325968-898078895.jpg",
+      "path": "/uploads/drawings/1746574325968-898078895.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:06.027Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574329288-131426156.jpg",
+      "path": "/uploads/drawings/1746574329288-131426156.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:09.360Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574333811-261776749.jpg",
+      "path": "/uploads/drawings/1746574333811-261776749.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:13.832Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574338989-596866367.jpg",
+      "path": "/uploads/drawings/1746574338989-596866367.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:19.000Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574344560-51990847.jpg",
+      "path": "/uploads/drawings/1746574344560-51990847.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:24.565Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574350976-962326454.jpg",
+      "path": "/uploads/drawings/1746574350976-962326454.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:31.010Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574362803-234138817.jpg",
+      "path": "/uploads/drawings/1746574362803-234138817.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:32:42.887Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574400220-460408893.jpg",
+      "path": "/uploads/drawings/1746574400220-460408893.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:20.215Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574421419-535967443.jpg",
+      "path": "/uploads/drawings/1746574421419-535967443.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:41.451Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574428551-430586645.jpg",
+      "path": "/uploads/drawings/1746574428551-430586645.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:48.600Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574432097-665208256.jpg",
+      "path": "/uploads/drawings/1746574432097-665208256.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:52.121Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574435300-769761086.jpg",
+      "path": "/uploads/drawings/1746574435300-769761086.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:55.325Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574438634-556605921.jpg",
+      "path": "/uploads/drawings/1746574438634-556605921.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:33:58.664Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574443665-15623842.jpg",
+      "path": "/uploads/drawings/1746574443665-15623842.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:03.667Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574446829-871717611.jpg",
+      "path": "/uploads/drawings/1746574446829-871717611.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:06.845Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574450478-228496063.jpg",
+      "path": "/uploads/drawings/1746574450478-228496063.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:10.522Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574453505-528574274.jpg",
+      "path": "/uploads/drawings/1746574453505-528574274.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:13.570Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574458533-551813267.jpg",
+      "path": "/uploads/drawings/1746574458533-551813267.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:18.666Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574487296-252379929.jpg",
+      "path": "/uploads/drawings/1746574487296-252379929.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:47.408Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574492365-109784462.jpg",
+      "path": "/uploads/drawings/1746574492365-109784462.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:52.442Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574496679-769124460.jpg",
+      "path": "/uploads/drawings/1746574496679-769124460.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:34:56.738Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574500114-502144736.jpg",
+      "path": "/uploads/drawings/1746574500114-502144736.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:00.152Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574504641-927016933.jpg",
+      "path": "/uploads/drawings/1746574504641-927016933.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:04.649Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574514411-917311731.jpg",
+      "path": "/uploads/drawings/1746574514411-917311731.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:14.447Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574518022-128483552.jpg",
+      "path": "/uploads/drawings/1746574518022-128483552.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:18.137Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574522169-874835144.jpg",
+      "path": "/uploads/drawings/1746574522169-874835144.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:22.304Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574525226-745662601.jpg",
+      "path": "/uploads/drawings/1746574525226-745662601.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:25.319Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574528594-558759562.jpg",
+      "path": "/uploads/drawings/1746574528594-558759562.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:28.635Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574533460-471006189.jpg",
+      "path": "/uploads/drawings/1746574533460-471006189.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:33.470Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574537136-622697879.jpg",
+      "path": "/uploads/drawings/1746574537136-622697879.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:37.137Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574541307-777781829.jpg",
+      "path": "/uploads/drawings/1746574541307-777781829.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:41.365Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574545407-574576627.jpg",
+      "path": "/uploads/drawings/1746574545407-574576627.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:45.483Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574549630-180958566.jpg",
+      "path": "/uploads/drawings/1746574549630-180958566.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:49.729Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746574552628-75684748.jpg",
+      "path": "/uploads/drawings/1746574552628-75684748.jpg",
       "title": "",
       "description": "",
       "category": "Dumps",
       "date": "2025-05-06T23:35:52.705Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746575421765-759755936.jpg",
+      "path": "/uploads/drawings/1746575421765-759755936.jpg",
       "title": "Lips",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-06T23:50:21.754Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746575409219-895776878.jpg",
+      "path": "/uploads/drawings/1746575409219-895776878.jpg",
       "title": "John Doe",
       "description": "",
       "category": "Portraits",
       "date": "2025-05-06T23:50:09.263Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746575467564-214235433.jpg",
+      "path": "/uploads/drawings/1746575467564-214235433.jpg",
       "title": "One-line (1)",
       "description": "",
       "category": "Colors",
       "date": "2025-05-06T23:51:07.597Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746575478649-246084546.jpg",
+      "path": "/uploads/drawings/1746575478649-246084546.jpg",
       "title": "One-line (2)",
       "description": "",
       "category": "Colors",
       "date": "2025-05-06T23:51:18.624Z"
     },
     {
-      "path": "https://portfolio-backend-yeop.onrender.com/uploads/drawings/1746575493145-798125001.jpg",
+      "path": "/uploads/drawings/1746575493145-798125001.jpg",
       "title": "Eve",
       "description": "",
       "category": "Colors",

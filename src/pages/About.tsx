@@ -18,7 +18,7 @@ const About = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
+        const response = await fetch('/uploads/content.json');
         const data = await response.json();
         
         if (data.abouts) {

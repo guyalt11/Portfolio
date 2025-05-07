@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ParallaxHeader from "@/components/ParallaxHeader";
 
 const Index = () => {
-  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
+  const backgroundImage = "/uploads/home/background.jpg";
   
   return (
     <div className="min-h-screen">

@@ -19,7 +19,7 @@ const Photos = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const response = await fetch('https://portfolio-backend-yeop.onrender.com/api/content');
+        const response = await fetch('/uploads/content.json');
         const data = await response.json();
         setContent(data);
       } catch (error) {
@@ -41,7 +41,7 @@ const Photos = () => {
     dateCreated: photo.date
   })) || [];
 
-  const backgroundImage = "https://portfolio-backend-yeop.onrender.com/uploads/home/background.jpg";
+  const backgroundImage = "/uploads/home/background.jpg";
   
   const categories = ["People", "Urban", "Nature", "B&W", "Textures"];
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
