@@ -37,15 +37,12 @@ const About = () => {
     loadContent();
   }, []);
 
-  const backgroundImage = "/uploads/home/background.jpg";
+  const backgroundImage = "/uploads/home/background3.jpg";
   
   return (
     <div className="min-h-screen">
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-fixed z-0" 
-        style={{ backgroundImage: `url(${backgroundImage})` }} 
-      />
-      <div className="relative z-10 p-8 max-w-4xl bg-white/90 backdrop-blur-sm my-20 mx-auto rounded-lg shadow-lg">
+      <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] z-0" />
+      <div className="relative z-10 p-8 m-10 max-w-4xl bg-white/90 backdrop-blur-sm  mx-auto rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">About</h1>
         
         {aboutContent.length > 0 ? (
