@@ -7,16 +7,27 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path ? "text-gray-900 font-medium" : "text-gray-600";
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const photoCategories = ["People", "Urban", "Nature", "B&W", "Textures"];
   const drawingCategories = ["Portraits", "Pencils", "Colors", "Dumps"];
 
   return (
-    <header className="z-10 fixed top-0 left-0 right-0 flex justify-center py-2 isolation-isolate">
+    <header className={`fixed top-0 left-0 right-0 flex justify-center py-2 isolation-isolate transition-all duration-300 ${scrolled ? "z-0" : "z-10"}`}>
       <div className="flex items-center justify-center bg-[#dbe3eb] rounded-lg">
         <NavigationMenu className="relative z-50">
           <NavigationMenuList>

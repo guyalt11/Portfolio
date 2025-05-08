@@ -1,15 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-//import { isAuthenticated } from "@/services/authService";
 import { useState } from "react";
 import PhotosNavbar from "./PhotosNavbar";
 import DrawingNavbar from "./DrawingNavbar";
 
 const Navbar = () => {
   const location = useLocation();
-  //const isAdmin = isAuthenticated();
   const isHomepage = location.pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
