@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import PhoneNavbar from "@/components/PhoneNavbar";
 import { useEffect, useState } from "react";
-import { FaInstagram, FaFacebook, FaLinkedin, FaGithub, FaYoutube, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaLinkedin, FaGithub, FaYoutube, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 interface AboutContent {
   id: string;
@@ -65,34 +65,25 @@ const About = () => {
         {/* Social Media Icons*/}
         <div className="mt-8 text-center">
           <div className="flex justify-center space-x-6">
-            <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#E1306C] hover:text-[#C13584]">
+            <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#E1306C]">
               <FaInstagram />
             </a>
-            <a href="https://www.facebook.com/guy.altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#3B5998] hover:text-[#2E4885]">
+            <a href="https://www.facebook.com/guy.altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#1877F2]">
               <FaFacebook />
             </a>
-            <a href="https://www.linkedin.com/in/guy-altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#0077B6] hover:text-[#005580]">
+            <a href="https://www.linkedin.com/in/guy-altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#0A66C2]">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#171A21] hover:text-site-dark-gray">
+            <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#24292E]">
               <FaGithub />
             </a>
-            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#FF0000] hover:text-[#CC0000]">
+            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#FF0000]">
               <FaYoutube />
             </a>
-            <a
-              href="mailto:guyalt11@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png"
-                alt="Gmail"
-                className="w-8 h-8 transition duration-200 group-hover:brightness-90"
-              />
+            <a href="mailto:guyalt11@gmail.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#D14836]">
+              <FaEnvelope />
             </a>
-            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#25D366] hover:text-[#128C7E]">
+            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#25D366]">
               <FaWhatsapp />
             </a>
           </div>
