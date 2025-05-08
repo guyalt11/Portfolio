@@ -76,6 +76,7 @@
   body {
     @apply bg-site-white text-site-dark-gray;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Dancing Script', cursive;
   }
 
   .parallax-container {

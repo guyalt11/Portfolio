@@ -78,7 +78,7 @@ const Navbar = () => {
                       <div
                         className="absolute left-full top-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200"
                       >
-                        <div className="py-4 min-w-[160px]">
+                        <div className="py-4 min-w-[160px] hidden md:block">
                           {item.label === "Photos" && <PhotosNavbar />}
                           {item.label === "Drawings" && <DrawingNavbar />}
                         </div>
