@@ -65,25 +65,25 @@ const About = () => {
         {/* Social Media Icons*/}
         <div className="mt-8 text-center">
           <div className="flex justify-center space-x-6">
-            <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#E1306C]">
+            <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaInstagram />
             </a>
-            <a href="https://www.facebook.com/guy.altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#1877F2]">
+            <a href="https://www.facebook.com/guy.altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaFacebook />
             </a>
-            <a href="https://www.linkedin.com/in/guy-altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#0A66C2]">
+            <a href="https://www.linkedin.com/in/guy-altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#24292E]">
+            <a href="https://github.com/guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaGithub />
             </a>
-            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#FF0000]">
+            <a href="https://www.youtube.com/@guyalt11" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaYoutube />
             </a>
-            <a href="mailto:guyalt11@gmail.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#D14836]">
+            <a href="mailto:guyalt11@gmail.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaEnvelope />
             </a>
-            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-gray-700 hover:text-[#25D366]">
+            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaWhatsapp />
             </a>
           </div>
