@@ -4,8 +4,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { Button } from "@/components/ui/button";
 //import { isAuthenticated } from "@/services/authService";
 import { useState } from "react";
-import PhotosNavbar from "./PhotosNavbar";
-import DrawingNavbar from "./DrawingNavbar";
 
 const Navbar = () => {
   const location = useLocation();
@@ -13,10 +11,6 @@ const Navbar = () => {
   const isHomepage = location.pathname === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-
-  const photoCategories = ["B&People", "Urban", "Nature", "B&W", "Textures"];
-  const drawingCategories = ["Portraits", "Pencils", "Colors", "Dumps"];
 
   const isActive = (path: string) => location.pathname === path ? "active" : "";
 
@@ -25,6 +19,7 @@ const Navbar = () => {
     { path: "/drawings", label: "Drawings" },
     { path: "/photos", label: "Photos" },
     { path: "/music", label: "Music" },
+    //{ path: isAdmin ? "/cms" : "/login", label: isAdmin ? "Admin" : "Admin Login" }
   ];
 
   const filteredItems = menuItems.filter(item => item.path !== "/login" && item.path !== "/cms");
@@ -62,29 +57,14 @@ const Navbar = () => {
                         : "none",
                   }}
                 >
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setHoveredItem(item.label)}
-                    onMouseLeave={() => setHoveredItem(null)}
+                  <Link
+                    to={item.path}
+                    className="relative text-4xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
+                    style={{ opacity }}
                   >
-                    <Link
-                      to={item.path}
-                      className="relative text-4xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
-                      style={{ opacity }}
-                    >
-                      <span className="relative z-10">{item.label}</span>
-                    </Link>
-                    {hoveredItem === item.label && (item.label === "Photos" || item.label === "Drawings") && (
-                      <div
-                        className="absolute left-full top-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200"
-                      >
-                        <div className="py-4 min-w-[160px]">
-                          {item.label === "Photos" && <PhotosNavbar />}
-                          {item.label === "Drawings" && <DrawingNavbar />}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                    <span className="relative z-10">{item.label}</span>
+                    <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-white md:bg-site-dark-gray transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                  </Link>
                 </li>
               );
             })}

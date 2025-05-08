@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import { useEffect, useState } from "react";
+import PhoneNavbar from "@/components/PhoneNavbar";
 
 interface ContentItem {
   id: string;
@@ -44,7 +45,9 @@ const Music = () => {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] -z-1" />
-      <Navigation />
+      <div className="hidden md:block">
+        <Navigation />
+      </div>
       <div className="relative p-8 mt-24 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
@@ -84,7 +87,9 @@ const Music = () => {
           <p className="text-gray-500">No music content available yet.</p>
         )}
       </div>
-
+      <div className="block md:hidden">
+        <PhoneNavbar />
+      </div>  
     </div>
   );
 };
