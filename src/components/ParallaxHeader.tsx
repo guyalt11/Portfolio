@@ -11,7 +11,7 @@ interface ParallaxHeaderProps {
  * Creates a parallax scrolling effect for the background image
  * 
  * @param imageUrl - URL of the background image
- * @param fullHeight - Whether the header should take full height of the viewport
+ * @param fullHeight - Whether the   should take full height of the viewport
  */
 const ParallaxHeader = ({ imageUrl, fullHeight = true }: ParallaxHeaderProps) => {
   const [offset, setOffset] = useState(0);

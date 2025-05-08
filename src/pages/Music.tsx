@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
+import Navigation from "@/components/Navigation";
 import { useEffect, useState } from "react";
-import ParallaxHeader from "@/components/ParallaxHeader";
 
 interface ContentItem {
   id: string;
@@ -44,8 +43,9 @@ const Music = () => {
   
   return (
     <div className="min-h-screen">
-      <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] z-0" />
-      <div className="relative z-10 p-8 m-10 max-w-90pct md:max-w-80pct bg-white/90 backdrop-blur-sm  mx-auto rounded-lg shadow-lg">
+      <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] -z-1" />
+      <Navigation />
+      <div className="relative p-8 mt-24 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
         {musicContent.length > 0 ? (
@@ -84,8 +84,7 @@ const Music = () => {
           <p className="text-gray-500">No music content available yet.</p>
         )}
       </div>
-      
-      <Navbar />
+
     </div>
   );
 };
