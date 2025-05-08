@@ -42,10 +42,10 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] -z-1" />
-      <div className="hidden md:block">
+      <div className="hidden sm:block">
         <Navigation />
       </div>
-      <div className="relative p-8 mt-16 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
+      <div className="relative p-8 sm:mt-16 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">About</h1>
         
         {aboutContent.length > 0 ? (
@@ -98,7 +98,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="block md:hidden">
+      <div className="block sm:hidden">
         <PhoneNavbar />
       </div>
     </div>
