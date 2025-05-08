@@ -17,8 +17,8 @@ const Navbar = () => {
 
   const menuItems = [
     { path: "/about", label: "About" },
-    { path: "/drawings", label: "Drawings" },
     { path: "/photos", label: "Photos" },
+    { path: "/drawings", label: "Drawings" },
     { path: "/music", label: "Music" },
   ];
 

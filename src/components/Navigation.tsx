@@ -49,9 +49,13 @@ const Navigation = () => {
                 <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger
                     className={`relative px-4 py-2 text-lg rounded-lg hover:bg-accent/50 hover:text-gray-900 ${isActive("/photos")} bg-transparent`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/photos";
+                    }}
                   >
-                    Photos
-                  </NavigationMenuTrigger>
+                  Photos
+                </NavigationMenuTrigger>
                   <NavigationMenuContent
                     className="relative z-50 mt-0 p-4 bg-accent"
                   >
@@ -82,6 +86,10 @@ const Navigation = () => {
                 <NavigationMenuItem className="relative">
                   <NavigationMenuTrigger
                     className={`relative px-4 py-2 text-lg rounded-lg hover:bg-accent/50 hover:text-gray-900 ${isActive("/drawings")} bg-transparent`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = "/drawings";
+                    }}
                   >
                     Drawings
                   </NavigationMenuTrigger>
