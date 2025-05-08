@@ -76,7 +76,7 @@ const Navbar = () => {
                     </Link>
                     {hoveredItem === item.label && (item.label === "Photos" || item.label === "Drawings") && (
                       <div
-                        className="absolute left-full top-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200"
+                        className="absolute left-full top-1/2 -translate-y-1/2 -ml-10 opacity-100 transition-opacity duration-200"
                       >
                         <div className="py-4 min-w-[160px] hidden md:block">
                           {item.label === "Photos" && <PhotosNavbar />}
