@@ -12,7 +12,7 @@ const Navigation = () => {
   const location = useLocation();
   const isActive = (path: string) => location.pathname === path ? "text-gray-900 font-medium" : "text-gray-600";
 
-  const photoCategories = ["B&People", "Urban", "Nature", "B&W", "Textures"];
+  const photoCategories = ["People", "Urban", "Nature", "B&W", "Textures"];
   const drawingCategories = ["Portraits", "Pencils", "Colors", "Dumps"];
 
   return (
@@ -48,11 +48,11 @@ const Navigation = () => {
                       {photoCategories.map((category) => (
                         <li key={category}>
                           <a
-                            href={`/photos?category=${category}`}
+                            href={`/photos?category=${encodeURIComponent(category)}`}
                             className="text-sm text-muted-foreground hover:text-primary"
                             onClick={(e) => {
                               e.preventDefault();
-                              window.location.href = `/photos?category=${category}`;
+                              window.location.href = `/photos?category=${encodeURIComponent(category)}`;
                             }}
                           >
                             {category}
@@ -81,11 +81,11 @@ const Navigation = () => {
                       {drawingCategories.map((category) => (
                         <li key={category}>
                           <a
-                            href={`/drawings?category=${category}`}
+                            href={`/drawings?category=${encodeURIComponent(category)}`}
                             className="text-sm text-muted-foreground hover:text-primary"
                             onClick={(e) => {
                               e.preventDefault();
-                              window.location.href = `/drawings?category=${category}`;
+                              window.location.href = `/drawings?category=${encodeURIComponent(category)}`;
                             }}
                           >
                             {category}

@@ -91,6 +91,41 @@ const Navbar = () => {
           </ul>
         </nav>
       )}
+
+      <div className="fixed top-4 right-4 z-50">
+        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="text-white md:text-site-dark-gray hover:bg-white/10 transition-all duration-300 h-12 w-12 p-2"
+            >
+              <Menu className="h-8 w-8" />
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-[300px] rounded-lg bg-white/70 backdrop-blur-sm border-none shadow-lg fixed top-4 right-4 h-auto max-h-[calc(100vh-2rem)]"
+          >
+            <nav className="flex flex-col gap-4 pt-4">
+              {menuItems.map((item) => (
+                <SheetClose asChild key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`text-xl py-3 px-4 rounded-md transition-all duration-200
+                      hover:bg-gray-100/80 relative overflow-hidden
+                      ${isActive(item.path) ? "text-gray-900 font-medium" : "text-gray-600"}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </SheetClose>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
     </>
   );
 };

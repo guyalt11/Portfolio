@@ -4,8 +4,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { Button } from "@/components/ui/button";
 //import { isAuthenticated } from "@/services/authService";
 import { useState } from "react";
-import PhotosNavbar from "./PhotosNavbar";
-import DrawingNavbar from "./DrawingNavbar";
 
 const Navbar = () => {
   const location = useLocation();
@@ -15,16 +13,13 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
-  const photoCategories = ["B&People", "Urban", "Nature", "B&W", "Textures"];
-  const drawingCategories = ["Portraits", "Pencils", "Colors", "Dumps"];
-
   const isActive = (path: string) => location.pathname === path ? "active" : "";
 
   const menuItems = [
-    { path: "/about", label: "About" },
-    { path: "/drawings", label: "Drawings" },
-    { path: "/photos", label: "Photos" },
-    { path: "/music", label: "Music" },
+    { path: "/drawings?category=Portraits", label: "Portraits" },
+    { path: "/drawings?category=Pencils", label: "Pencils" },
+    { path: "/drawings?category=Colors", label: "Colors" },
+    { path: "/drawings?category=Dumps", label: "Dumps" },
   ];
 
   const filteredItems = menuItems.filter(item => item.path !== "/login" && item.path !== "/cms");
@@ -32,11 +27,9 @@ const Navbar = () => {
   return (
     <>
       {isHomepage && (
-        <nav className="fixed inset-0 z-10 flex justify-center items-center bg-gray-800 bg-opacity-50 p-6
-            md:inset-auto md:top-0 md:right-0 md:h-screen md:w-1/2 md:min-w-[400px]
-            md:bg-transparent md:p-0 md:justify-center md:items-center"
-        >
-          <ul className="flex flex-col gap-12">
+        <nav className=""
+        > 
+          <ul className="flex flex-col gap-6">
             {filteredItems.map((item, index) => {
               // calculate opacity based on distance
               let opacity = 0.75;
@@ -69,21 +62,11 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
-                      className="relative text-4xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
+                      className="relative text-2xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
                       style={{ opacity }}
                     >
                       <span className="relative z-10">{item.label}</span>
                     </Link>
-                    {hoveredItem === item.label && (item.label === "Photos" || item.label === "Drawings") && (
-                      <div
-                        className="absolute left-full top-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200"
-                      >
-                        <div className="py-4 min-w-[160px]">
-                          {item.label === "Photos" && <PhotosNavbar />}
-                          {item.label === "Drawings" && <DrawingNavbar />}
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </li>
               );
@@ -91,6 +74,7 @@ const Navbar = () => {
           </ul>
         </nav>
       )}
+
     </>
   );
 };
