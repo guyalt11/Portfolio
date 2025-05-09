@@ -24,7 +24,7 @@ const Navigation = () => {
   }, []);
 
   const photoCategories = ["People", "Urban", "Nature", "B&W", "Textures"];
-  const drawingCategories = ["Portraits", "Pencils", "Colors", "Dumps"];
+  const drawingCategories = ["Pencils", "Colors", "Portraits", "Dumps"];
 
   return (
     <header className={`fixed top-0 left-0 right-0 flex justify-center py-2 isolation-isolate transition-all duration-300 ${scrolled ? "z-0" : "z-10"}`}>
