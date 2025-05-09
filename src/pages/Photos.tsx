@@ -110,7 +110,7 @@ const Photos = () => {
         </div>
         
         {photos.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="mb-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {photos
               .filter((photo) => photo.category === selectedCategory)
               .map((photo, index) => (

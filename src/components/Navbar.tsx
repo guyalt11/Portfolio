@@ -28,8 +28,8 @@ const Navbar = () => {
     <>
       {isHomepage && (
         <nav className="fixed inset-0 z-10 flex justify-center items-center bg-gray-800 bg-opacity-50 p-6
-            md:inset-auto md:top-0 md:right-0 md:h-screen md:w-1/2 md:min-w-[400px]
-            md:bg-transparent md:p-0 md:justify-center md:items-center"
+            sm:inset-auto sm:top-0 sm:right-0 sm:h-screen sm:w-1/2 sm:min-w-[400px]
+            sm:bg-transparent sm:p-0 sm:justify-center sm:items-center"
         >
           <ul className="flex flex-col gap-12">
             {filteredItems.map((item, index) => {
@@ -64,7 +64,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
-                      className="relative text-4xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
+                      className="relative text-4xl text-white sm:text-site-dark-gray transition-all duration-300 group py-4 px-8"
                       style={{ opacity }}
                     >
                       <span className="relative z-10">{item.label}</span>
@@ -73,7 +73,7 @@ const Navbar = () => {
                       <div
                         className="absolute left-full top-1/2 -translate-y-1/2 -ml-10 opacity-100 transition-opacity duration-200"
                       >
-                        <div className="py-4 min-w-[160px] hidden md:block">
+                        <div className="py-4 min-w-[160px] hidden sm:block">
                           {item.label === "Photos" && <PhotosNavbar />}
                           {item.label === "Drawings" && <DrawingNavbar />}
                         </div>

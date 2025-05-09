@@ -63,7 +63,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
-                      className="relative text-2xl text-white md:text-site-dark-gray transition-all duration-300 group py-4 px-8"
+                      className="relative text-2xl text-white sm:text-site-dark-gray transition-all duration-300 group py-4 px-8"
                       style={{ opacity }}
                     >
                       <span className="relative z-10">{item.label}</span>
