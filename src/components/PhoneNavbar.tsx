@@ -34,9 +34,14 @@ const Navbar = () => {
           </SheetTrigger>
           <SheetContent
             side="right"
-            className="w-[190px] h-[45vh] rounded-lg bg-white/0 border-none shadow-lg fixed top-4 right-4"
+            className="w-[190px] rounded-lg bg-white/0 border-none shadow-lg fixed top-4 right-4 [&>button.absolute.right-4.top-4]:hidden"
           >
-            <nav className="flex flex-col gap-3 pt-4">
+            <SheetClose asChild>
+              <button className="absolute text-2xl right-2 top-0 text-gray-100 rounded-full backdrop-blur-sm p-2">
+                X
+              </button>
+            </SheetClose>
+            <nav className="flex flex-col gap-3 pt-6">
               {menuItems.map((item) => (
                 <SheetClose asChild key={item.path}>
                   <Link
