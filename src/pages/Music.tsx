@@ -52,7 +52,7 @@ const Music = () => {
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">Music</h1>
         
         {musicContent.length > 0 ? (
-          <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mb-8 sm:mb-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             {musicContent.map((item) => (
               <div key={item.id} className="p-4 bg-white/50 rounded-lg shadow-sm">
                 {item.youtubeUrl && (

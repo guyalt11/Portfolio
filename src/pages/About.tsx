@@ -63,7 +63,7 @@ const About = () => {
           <p className="text-gray-500">No about content available yet.</p>
         )}
         {/* Social Media Icons*/}
-        <div className="mt-8 mb-6 text-center">
+        <div className="mt-8 mb-8 sm:mb-6 text-center">
           <div className="flex justify-center space-x-6">
             <a href="https://www.instagram.com/guy_altmann/" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaInstagram />

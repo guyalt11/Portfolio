@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import ParallaxHeader from "@/components/ParallaxHeader";
 import PhoneNavbar from "@/components/PhoneNavbar";
 
 const Index = () => {
@@ -7,7 +6,10 @@ const Index = () => {
   
   return (
     <div className="min-h-screen">
-      <ParallaxHeader imageUrl={backgroundImage} />
+      <div
+        className="h-screen bg-cover bg-center"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      ></div>
       <Navbar />
       <div className="block sm:hidden">
         <PhoneNavbar />
