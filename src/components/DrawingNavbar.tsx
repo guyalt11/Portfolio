@@ -16,9 +16,9 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path ? "active" : "";
 
   const menuItems = [
-    { path: "/drawings?category=Portraits", label: "Portraits" },
     { path: "/drawings?category=Pencils", label: "Pencils" },
     { path: "/drawings?category=Colors", label: "Colors" },
+    { path: "/drawings?category=Portraits", label: "Portraits" },
     { path: "/drawings?category=Dumps", label: "Dumps" },
   ];
 
