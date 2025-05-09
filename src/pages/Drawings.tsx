@@ -44,7 +44,7 @@ const Drawings = () => {
 
   const backgroundImage = "/uploads/home/background3.jpg";
   
-  const categories = ["Portraits", "Pencils", "Colors", "Dumps"];
+  const categories = ["Pencils", "Colors", "Portraits", "Dumps"];
   const location = useLocation();
   const navigate = useNavigate();
   const urlParams = new URLSearchParams(location.search);
