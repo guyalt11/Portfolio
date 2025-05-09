@@ -86,6 +86,9 @@ const Music = () => {
         ) : (
           <p className="text-gray-500">No music content available yet.</p>
         )}
+        <footer className="left-1/2 -translate-x-1/2 text-center text-sm text-gray-500 py-4 fixed bottom-0 z-50">
+          © 2025 Guy Altmann. All rights reserved.
+        </footer>
       </div>
       <div className="block sm:hidden">
         <PhoneNavbar />
