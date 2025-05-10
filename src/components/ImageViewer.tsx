@@ -94,9 +94,9 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={() => onOpenChange(false)}
-              className="rounded-full"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
             >
-              <X className="h-6 w-6" />
+              {'X'}
             </Button>
           </div>
           
@@ -105,9 +105,9 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handlePrevious}
-              className="rounded-full"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
             >
-              <ArrowLeft className="h-6 w-6" />
+              {'<'}
             </Button>
           </div>
           
@@ -116,17 +116,17 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handleNext}
-              className="rounded-full"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
             >
-              <ArrowRight className="h-6 w-6" />
+              {'>'}
             </Button>
           </div>
         </div>
         
-        <div className="mt-4">
-          <h3 className="text-lg text-center font-medium">{currentItem?.title}</h3>
+        <div className="mt-4 flex justify-center">
+          <h3 className="bg-white/80 text-xl px-8 py-1 rounded-lg font-medium">{currentItem?.title}</h3>
           {currentItem?.description && (
-            <p className="text-gray-600 mt-2">{currentItem.description}</p>
+            <p className="bg-white/80 text-lg px-4 py-1 rounded-lg font-medium mt-2">{currentItem.description}</p>
           )}
         </div>
       </DialogContent>
