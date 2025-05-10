@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect, memo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 
 interface ContentItem {
   id: string;
@@ -23,9 +22,9 @@ const ImageContent = memo(({ item }: { item: ContentItem }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full bg-transparent">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-transparent">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
         </div>
       )}
