@@ -124,7 +124,9 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
         </div>
         
         <div className="mt-4 flex justify-center">
-          <h3 className="bg-white/80 text-xl px-8 py-1 rounded-lg font-medium">{currentItem?.title}</h3>
+          {currentItem?.title && (
+            <h3 className="bg-white/80 text-xl px-8 py-1 rounded-lg font-medium">{currentItem?.title}</h3>
+          )}
           {currentItem?.description && (
             <p className="bg-white/80 text-lg px-4 py-1 rounded-lg font-medium mt-2">{currentItem.description}</p>
           )}

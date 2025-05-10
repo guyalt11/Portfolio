@@ -45,7 +45,7 @@ const About = () => {
       <div className="hidden sm:block">
         <Navigation />
       </div>
-      <div className="relative p-8 sm:mt-16 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
+      <div className="relative p-8 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">About</h1>
         
         {aboutContent.length > 0 ? (

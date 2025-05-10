@@ -3,7 +3,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -27,8 +26,9 @@ const Navigation = () => {
   const drawingCategories = ["Pencils", "Colors", "Portraits", "Dumps"];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 flex justify-center py-2 isolation-isolate transition-all duration-300 ${scrolled ? "z-0" : "z-10"}`}>
-      <div className="flex items-center justify-center bg-[#dbe3eb] rounded-lg">
+    <header className={`py-2 isolation-isolate transition-all duration-300 ${scrolled ? "z-0 " : "z-10"}`}>
+    {/* <header className={`py-2 isolation-isolate transition-all duration-300 ${scrolled ? "z-0 " : "z-10"}`}> */}
+    <div className=" shadow-lg flex items-center justify-center bg-[#dbe3eb] rounded-lg">
         <NavigationMenu className="relative z-50">
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -57,7 +57,7 @@ const Navigation = () => {
                   Photos
                 </NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="relative z-50 mt-0 p-4 bg-accent"
+                    className="relative z-50 mt-0 p-4 bg-[#dfe6e9]"
                   >
                       <ul className="grid w-[4.5em] gap-3">
                       {photoCategories.map((category) => (
@@ -94,7 +94,7 @@ const Navigation = () => {
                     Drawings
                   </NavigationMenuTrigger>
                   <NavigationMenuContent
-                    className="relative z-50 mt-0 p-4 bg-accent"
+                    className="relative z-50 mt-0 p-4 bg-[#dfe6e9]"
                   >
                     <ul className="grid w-[5.5em] gap-3">
                       {drawingCategories.map((category) => (
