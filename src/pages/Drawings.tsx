@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import ImageModal from "@/components/ImageModal";
 import PhoneNavbar from "@/components/PhoneNavbar"; 
+import ImageViewer from "@/components/ImageViewer";
 
 interface ContentItem {
   id: string;
@@ -58,11 +58,8 @@ const Drawings = () => {
     setSelectedCategory(category);
     navigate(`/drawings?category=${category}`);
   };
-  const filteredDrawings = drawings.filter(
-    (drawing) => drawing.category === selectedCategory
-  );
 
-  const selectedImage = selectedImageIndex !== null ? filteredDrawings[selectedImageIndex] : null;
+  const filteredDrawings = drawings.filter(d => d.category === selectedCategory);
   
   const handleNext = () => {
     if (selectedImageIndex !== null) {
@@ -146,16 +143,11 @@ const Drawings = () => {
       <div className="block sm:hidden">
         <PhoneNavbar />
       </div>  
-      <ImageModal
+      <ImageViewer
+        items={filteredDrawings}
+        initialIndex={selectedImageIndex ?? 0}
         isOpen={selectedImageIndex !== null}
-        onClose={() => setSelectedImageIndex(null)}
-        imageUrl={selectedImage?.url || ""}
-        title={selectedImage?.title || ""}
-        description={selectedImage?.description}
-        onNext={handleNext}
-        onPrevious={handlePrevious}
-        hasNext={true}
-        hasPrevious={true}
+        onOpenChange={(open) => setSelectedImageIndex(open ? selectedImageIndex : null)}
       />
     </div>
   );

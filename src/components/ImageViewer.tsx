@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect, memo } from 'react';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
@@ -12,16 +12,6 @@ interface ContentItem {
   dateCreated: string;
 }
 
-/**
- * ImageViewer Component
- * Displays an enlarged view of images/sketches with navigation controls
- * 
- * @param props - Component props
- * @param props.items - Array of ContentItems to display in the viewer
- * @param props.initialIndex - Initial index to display (defaults to 0)
- * @param props.isOpen - Boolean to control dialog open state
- * @param props.onOpenChange - Function to call when dialog open state changes
- */
 interface ImageViewerProps {
   items: ContentItem[];
   initialIndex?: number;
@@ -29,30 +19,75 @@ interface ImageViewerProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const ImageContent = memo(({ item }: { item: ContentItem }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="relative w-full h-full">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <img
+        src={item.url}
+        alt={item.title}
+        className="w-full h-auto max-h-[80vh] object-contain transition-opacity duration-300"
+        style={{ opacity: isLoading ? 0 : 1 }}
+        onLoad={() => setIsLoading(false)}
+      />
+    </div>
+  );
+});
+
 const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageViewerProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
-  const handlePrevious = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : items.length - 1));
-  };
+  useEffect(() => {
+    setCurrentIndex(initialIndex);
+  }, [initialIndex]);
 
-  const handleNext = () => {
+  const handlePrevious = useCallback(() => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : items.length - 1));
+  }, [items.length]);
+
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev < items.length - 1 ? prev + 1 : 0));
-  };
+  }, [items.length]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isOpen) return;
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') onOpenChange(false);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, handlePrevious, handleNext, onOpenChange]);
 
   const currentItem = items[currentIndex];
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const nextIndex = (currentIndex + 1) % items.length;
+    const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+    
+    const preloadImage = (url: string) => {
+      const img = new Image();
+      img.src = url;
+    };
+
+    preloadImage(items[nextIndex].url);
+    preloadImage(items[prevIndex].url);
+  }, [currentIndex, items, isOpen]);
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl">
         <div className="relative">
-          {currentItem && (
-            <img
-              src={currentItem.url}
-              alt={currentItem.title}
-              className="w-full h-auto max-h-[80vh] object-contain"
-            />
-          )}
+          {currentItem && <ImageContent item={currentItem} />}
           
           <div className="absolute top-4 right-4">
             <Button
@@ -89,7 +124,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
         </div>
         
         <div className="mt-4">
-          <h3 className="text-lg font-medium">{currentItem?.title}</h3>
+          <h3 className="text-lg text-center font-medium">{currentItem?.title}</h3>
           {currentItem?.description && (
             <p className="text-gray-600 mt-2">{currentItem.description}</p>
           )}

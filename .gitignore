@@ -3,4 +3,3 @@ dist
 src/services/authService.ts
 src/pages/Login.tsx
 src/pages/CMS.tsx
-src/components/ProtectedRoute.tsx

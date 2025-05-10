@@ -9,7 +9,6 @@ import Photos from "./pages/Photos";
 import Drawings from "./pages/Drawings";
 import Music from "./pages/Music";
 import NotFound from "./pages/NotFound";
-import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
