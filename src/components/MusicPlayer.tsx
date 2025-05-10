@@ -33,7 +33,7 @@ const MusicPlayer = ({ tracks }: MusicPlayerProps) => {
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-xl font-medium mb-3">{currentTrack.title}</h2>
           <div className="mb-4">
-            <audio controls className="w-full" src={currentTrack.url} autoPlay />
+            <audio controls className="w-full" src={currentTrack.url} autoPlay preload="auto" />
           </div>
           {currentTrack.description && (
             <p className="text-site-gray">{currentTrack.description}</p>

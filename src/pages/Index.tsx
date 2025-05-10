@@ -1,8 +1,16 @@
 import Navbar from "@/components/Navbar";
+import { useEffect } from "react";
 
 const Index = () => {
   const backgroundImage = "/uploads/home/background.jpg";
   
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <div
