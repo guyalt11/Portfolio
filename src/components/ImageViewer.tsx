@@ -90,7 +90,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
             variant="ghost"
             size="icon"
             onClick={() => onOpenChange(false)}
-            className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
+            className="rounded-full text-white text-4xl bg-gray-800/10 ms:bg-gray-800/40 shadow-none hover:bg-gray-800/10 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
           >
               {'X'}
             </Button>
@@ -102,7 +102,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={() => onOpenChange(false)}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/10 ms:bg-gray-800/40 shadow-none hover:bg-gray-800/10 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'X'}
             </Button>
@@ -113,7 +113,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handlePrevious}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/10 ms:bg-gray-800/40 shadow-none hover:bg-gray-800/10 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'<'}
             </Button>
@@ -124,7 +124,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handleNext}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/10 ms:bg-gray-800/40 shadow-none hover:bg-gray-800/10 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'>'}
             </Button>
