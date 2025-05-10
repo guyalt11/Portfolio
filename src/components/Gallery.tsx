@@ -1,7 +1,5 @@
-import { useState, useCallback, memo, useEffect } from "react";
-import { useVirtualizer } from '@tanstack/react-virtual';
+import { useState, useCallback, memo, useEffect, useRef } from "react";
 import ImageViewer from "./ImageViewer";
-import { useInView } from 'react-intersection-observer';
 
 interface ContentItem {
   id: string;
@@ -18,27 +16,48 @@ interface GalleryProps {
 }
 
 const LazyImage = memo(({ item, onClick }: { item: ContentItem; onClick: () => void }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
-      ref={ref}
-      className="bg-white p-2 rounded-md shadow-sm cursor-pointer transition-transform hover:scale-[1.02]"
+      className="group bg-white p-2 rounded-md shadow-sm cursor-pointer will-change-transform"
       onClick={onClick}
+      style={{
+        transform: `scale(${isVisible ? '1' : '0.98'})`
+      }}
     >
-      <div className="aspect-square overflow-hidden rounded-md">
-        {inView ? (
+      <div className="aspect-square overflow-hidden rounded-md bg-gray-50">
+        {isVisible && (
           <img
+            ref={imgRef}
             src={item.url}
             alt={item.title}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform hover:scale-105"
+            className={`w-full h-full object-cover transform transition-all duration-300 ease-out will-change-transform ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            } group-hover:scale-105`}
+            onLoad={() => setIsLoaded(true)}
           />
-        ) : (
-          <div className="w-full h-full bg-gray-100 animate-pulse" />
         )}
       </div>
       <div className="p-2">
@@ -99,46 +118,16 @@ const Gallery = memo(({ items, type }: GalleryProps) => {
     );
   }
 
-  const [parentRef, setParentRef] = useState<HTMLDivElement | null>(null);
-
-  const rowVirtualizer = useVirtualizer({
-    count: Math.ceil(items.length / 3),
-    getScrollElement: () => parentRef,
-    estimateSize: () => 300,
-    overscan: 5,
-  });
-
-  useEffect(() => {
-    if (parentRef) parentRef.scrollTop = 0;
-  }, [parentRef]);
-
   return (
     <div>
-      <div
-        ref={setParentRef}
-        className="h-[80vh] overflow-auto">
-        <div
-          style={{
-            height: `${rowVirtualizer.getTotalSize()}px`,
-            width: '100%',
-            position: 'relative',
-          }}
-        >
-          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
-            const startIndex = virtualRow.index * 3;
-            const rowItems = items.slice(startIndex, startIndex + 3);
-
-            return (
-              <VirtualRow
-                key={virtualRow.index}
-                virtualRow={virtualRow}
-                items={items}
-                startIndex={startIndex}
-                onImageClick={handleOpenImage}
-              />
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 auto-rows-max">
+        {items.map((item, index) => (
+          <LazyImage
+            key={item.id}
+            item={item}
+            onClick={() => handleOpenImage(index)}
+          />
+        ))}
       </div>
 
       <ImageViewer
