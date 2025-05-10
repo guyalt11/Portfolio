@@ -84,16 +84,25 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl">
+      <DialogContent className="w-full max-w-none">
+        <div className="absolute top-[-2rem] right-4 block sm:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => onOpenChange(false)}
+            className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
+          >
+              {'X'}
+            </Button>
+          </div>
         <div className="relative">
           {currentItem && <ImageContent item={currentItem} />}
-          
-          <div className="absolute top-4 right-4">
+          <div className="absolute top-4 right-4 hidden sm:block">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => onOpenChange(false)}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'X'}
             </Button>
@@ -104,7 +113,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handlePrevious}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'<'}
             </Button>
@@ -115,7 +124,7 @@ const ImageViewer = ({ items, initialIndex = 0, isOpen, onOpenChange }: ImageVie
               variant="ghost"
               size="icon"
               onClick={handleNext}
-              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none border-none focus:outline-none"
+              className="rounded-full text-white text-4xl bg-gray-800/40 shadow-none hover:bg-gray-800/40 hover:text-white sm:hover:bg-white sm:hover:text-black border-none focus:outline-none"
             >
               {'>'}
             </Button>

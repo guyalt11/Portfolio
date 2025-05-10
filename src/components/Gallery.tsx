@@ -1,14 +1,6 @@
-import { useState, useCallback, memo, useEffect, useRef } from "react";
+import { useState, useCallback, useRef, memo, useEffect } from "react";
 import ImageViewer from "./ImageViewer";
-
-interface ContentItem {
-  id: string;
-  type: "photo" | "drawing" | "music" | "about";
-  title: string;
-  description?: string;
-  url: string;
-  dateCreated: string;
-}
+import { ContentItem } from "@/types";
 
 interface GalleryProps {
   items: ContentItem[];
@@ -16,9 +8,10 @@ interface GalleryProps {
 }
 
 const LazyImage = memo(({ item, onClick }: { item: ContentItem; onClick: () => void }) => {
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,7 +21,10 @@ const LazyImage = memo(({ item, onClick }: { item: ContentItem; onClick: () => v
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { 
+        rootMargin: '50px',
+        threshold: 0.1 
+      }
     );
 
     if (imgRef.current) {
@@ -38,106 +34,100 @@ const LazyImage = memo(({ item, onClick }: { item: ContentItem; onClick: () => v
     return () => observer.disconnect();
   }, []);
 
+  // Preload image
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const img = new Image();
+    img.src = item.url;
+    img.onload = () => setIsLoaded(true);
+    img.onerror = () => setError(true);
+
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [isVisible, item.url]);
+
   return (
     <div
-      className="group bg-white p-2 rounded-md shadow-sm cursor-pointer will-change-transform"
+      ref={imgRef}
+      className="group relative aspect-square overflow-hidden rounded-lg bg-gray-100 will-change-transform cursor-pointer"
       onClick={onClick}
-      style={{
-        transform: `scale(${isVisible ? '1' : '0.98'})`
-      }}
     >
-      <div className="aspect-square overflow-hidden rounded-md bg-gray-50">
-        {isVisible && (
+      {isVisible && !error && (
+        <>
           <img
-            ref={imgRef}
             src={item.url}
             alt={item.title}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"} group-hover:scale-110`}
             loading="lazy"
-            className={`w-full h-full object-cover transform transition-all duration-300 ease-out will-change-transform ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            } group-hover:scale-105`}
-            onLoad={() => setIsLoaded(true)}
+            decoding="async"
           />
-        )}
-      </div>
-      <div className="p-2">
-        <h3 className="font-medium">{item.title}</h3>
-        {item.description && (
-          <p className="text-sm text-site-gray mt-1">{item.description}</p>
-        )}
-      </div>
+          <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
+        </>
+      )}
+      {!isLoaded && !error && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+      )}
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-400">
+          Failed to load
+        </div>
+      )}
     </div>
   );
 });
 
-const VirtualRow = memo(({ virtualRow, items, startIndex, onImageClick }: {
-  virtualRow: any;
-  items: ContentItem[];
-  startIndex: number;
-  onImageClick: (index: number) => void;
-}) => {
-  const rowItems = items.slice(startIndex, startIndex + 3);
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: `${virtualRow.size}px`,
-        transform: `translateY(${virtualRow.start}px)`,
-      }}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4"
-    >
-      {rowItems.map((item, index) => (
-        <LazyImage
-          key={item.id}
-          item={item}
-          onClick={() => onImageClick(startIndex + index)}
-        />
-      ))}
-    </div>
-  );
-});
+LazyImage.displayName = 'LazyImage';
 
 const Gallery = memo(({ items, type }: GalleryProps) => {
-  const [viewerOpen, setViewerOpen] = useState(false);
-  const [initialIndex, setInitialIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleOpenImage = useCallback((index: number) => {
-    setInitialIndex(index);
-    setViewerOpen(true);
+    setSelectedIndex(index);
   }, []);
+
+  const handleCloseImage = useCallback(() => {
+    setSelectedIndex(null);
+  }, []);
+
+  // Optimize re-renders by memoizing the grid
+  const imageGrid = useCallback(() => (
+    items.map((item, index) => (
+      <LazyImage
+        key={item.id}
+        item={item}
+        onClick={() => handleOpenImage(index)}
+      />
+    ))
+  ), [items, handleOpenImage]);
 
   if (items.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-site-gray">No {type === "photo" ? "photos" : "drawings"} available.</p>
+        <p className="text-site-gray">No {type}s available.</p>
       </div>
     );
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 auto-rows-max">
-        {items.map((item, index) => (
-          <LazyImage
-            key={item.id}
-            item={item}
-            onClick={() => handleOpenImage(index)}
-          />
-        ))}
-      </div>
-
+    <div 
+      ref={containerRef}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 auto-rows-max"
+    >
+      {imageGrid()}
       <ImageViewer
+        isOpen={selectedIndex !== null}
+        onClose={handleCloseImage}
         items={items}
-        initialIndex={initialIndex}
-        isOpen={viewerOpen}
-        onOpenChange={setViewerOpen}
+        initialIndex={selectedIndex ?? 0}
       />
     </div>
   );
-});  
+});
+
+Gallery.displayName = 'Gallery';
 
 export default Gallery;
