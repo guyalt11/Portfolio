@@ -80,6 +80,7 @@ const Photos = () => {
       }
     }
   };
+  
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] -z-1" />
@@ -108,29 +109,29 @@ const Photos = () => {
         
         {photos.length > 0 ? (
           <div className="mb-8 sm:mb-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {photos
-              .filter((photo) => photo.category === selectedCategory)
-              .map((photo, index) => (
+            {
+              filteredPhotos.map((photo, index) => (
                 <div 
                   key={photo.id} 
                   className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow"
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                <img 
-                  src={photo.url+".webp"}
-                  alt={photo.title} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  {photo.title && (
-                    <h3 className="text-lg font-medium mb-2 text-center">{photo.title}</h3>
-                  )}
-                  {photo.description && (
-                    <p className="text-gray-600">{photo.description}</p>
-                  )}
+                  <img 
+                    src={photo.url + ".webp"}
+                    alt={photo.title} 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    {photo.title && (
+                      <h3 className="text-lg font-medium mb-2 text-center">{photo.title}</h3>
+                    )}
+                    {photo.description && (
+                      <p className="text-gray-600">{photo.description}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         ) : (
           <p className="text-gray-500">No photos available yet.</p>

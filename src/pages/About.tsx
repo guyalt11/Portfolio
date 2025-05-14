@@ -62,6 +62,18 @@ const About = () => {
         ) : (
           <p className="text-gray-500">No about content available yet.</p>
         )}
+        
+        {/* 
+        <div className="text-center mb-8">
+          <img 
+            src="/uploads/home/about.jpg" 
+            alt="Description"
+            className="rounded-lg mx-auto"
+          />
+        </div>
+        */}
+        
+
         {/* Social Media Icons*/}
         <div className="mt-8 mb-8 sm:mb-6 text-center">
           <div className="flex justify-center space-x-6">

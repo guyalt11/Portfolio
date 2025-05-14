@@ -109,29 +109,29 @@ const Drawings = () => {
         
         {drawings.length > 0 ? (
           <div className="mb-8 sm:mb-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {drawings
-              .filter((drawing) => drawing.category === selectedCategory)
-              .map((drawing, index) => (
+            {
+              filteredDrawings.map((drawing, index) => (
                 <div 
                   key={drawing.id} 
                   className="bg-white rounded-lg overflow-hidden shadow-sm cursor-pointer hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-shadow"
                   onClick={() => setSelectedImageIndex(index)}
                 >
-                <img 
-                  src={drawing.url+".webp"} 
-                  alt={drawing.title} 
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  {drawing.title && (
-                    <h3 className="text-lg font-medium mb-2 text-center">{drawing.title}</h3>
-                  )}
-                  {drawing.description && (
-                    <p className="text-gray-600">{drawing.description}</p>
-                  )}
+                  <img 
+                    src={drawing.url + ".webp"}
+                    alt={drawing.title} 
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="p-4">
+                    {drawing.title && (
+                      <h3 className="text-lg font-medium mb-2 text-center">{drawing.title}</h3>
+                    )}
+                    {drawing.description && (
+                      <p className="text-gray-600">{drawing.description}</p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
         ) : (
           <p className="text-gray-500">No drawings available yet.</p>
