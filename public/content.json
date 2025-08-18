@@ -211,6 +211,13 @@
       "date": "2025-05-04T13:30:32.698Z"
     },
     {
+      "path": "/uploads/photos/1755510680724-592853917.jpg",
+      "title": "Siena",
+      "description": "",
+      "category": "Urban",
+      "date": "2025-08-18T12:06:20.724Z"
+    },
+    {
       "path": "/uploads/photos/1746366279140-246344145.jpg",
       "title": "JAMD Staircase",
       "description": "",
@@ -885,6 +892,13 @@
       "date": "2025-05-06T23:23:45.022Z"
     },
     {
+      "path": "/uploads/drawings/1755510012000-274915382.jpg",
+      "title": "Seyðisfjörður",
+      "description": "",
+      "category": "Pencils",
+      "date": "2025-08-18T11:59:10.022Z"
+    },
+    {
       "path": "/uploads/drawings/1746573831332-633411498.jpg",
       "title": "London",
       "description": "",
@@ -1221,6 +1235,34 @@
       "date": "2025-05-06T23:35:22.304Z"
     },
     {
+      "path": "/uploads/drawings/1755510056347-906284731.jpg",
+      "title": "",
+      "description": "",
+      "category": "Dumps",
+      "date": "2025-08-18T12:01:04.304Z"
+    },
+    {
+      "path": "/uploads/drawings/1755510165123-709384216.jpg",
+      "title": "",
+      "description": "",
+      "category": "Dumps",
+      "date": "2025-08-18T12:02:45.126Z"
+    },
+    {
+      "path": "/uploads/drawings/1755510210123-564128739.jpg",
+      "title": "",
+      "description": "",
+      "category": "Dumps",
+      "date": "2025-08-18T12:02:30.126Z"
+    },
+    {
+      "path": "/uploads/drawings/1755510183123-835790421.jpg",
+      "title": "",
+      "description": "",
+      "category": "Dumps",
+      "date": "2025-08-18T12:03:13.126Z"
+    },
+    {
       "path": "/uploads/drawings/1746574525226-745662601.jpg",
       "title": "",
       "description": "",
@@ -1320,6 +1362,12 @@
     }
   ],
   "musics": [
+    {
+      "path": "https://www.youtube.com/embed/6phT83h4SZQ",
+      "title": "Clair de Lune",
+      "description": "Clair de Lune (Claude Debussy) - Guy Altmann - 11/08/2025",
+      "date": "2025-08-18T11:34:51.843Z"
+    },
     {
       "path": "https://www.youtube.com/embed/Jcahr8vQXfU",
       "title": "The Nearness of You",
