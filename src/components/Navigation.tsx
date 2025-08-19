@@ -42,7 +42,11 @@ const Navigation = () => {
                 About
               </Link>
             </NavigationMenuItem>
-
+            <NavigationMenuItem>
+              <Link to="/music" className={`px-4 py-2 text-lg rounded-lg hover:bg-accent/50 hover:text-gray-900 ${isActive("/music")}`}>
+                Music
+              </Link>
+            </NavigationMenuItem>
             {/* Photos */}
             <NavigationMenu className="relative z-50">
               <NavigationMenuList className="flex gap-4">
@@ -116,14 +120,6 @@ const Navigation = () => {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
-
-
-
-            <NavigationMenuItem>
-              <Link to="/music" className={`px-4 py-2 text-lg rounded-lg hover:bg-accent/50 hover:text-gray-900 ${isActive("/music")}`}>
-                Music
-              </Link>
-            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>

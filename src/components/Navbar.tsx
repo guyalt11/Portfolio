@@ -17,9 +17,9 @@ const Navbar = () => {
 
   const menuItems = [
     { path: "/about", label: "About" },
+    { path: "/music", label: "Music" },
     { path: "/photos", label: "Photos" },
     { path: "/drawings", label: "Drawings" },
-    { path: "/music", label: "Music" },
   ];
 
   const filteredItems = menuItems.filter(item => item.path !== "/login" && item.path !== "/cms");
