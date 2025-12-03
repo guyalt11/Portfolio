@@ -20,7 +20,7 @@ const About = () => {
       try {
         const response = await fetch('content.json');
         const data = await response.json();
-        
+
         if (data.abouts) {
           setAboutContent(data.abouts.map((item: any, index: number) => ({
             id: `about-${index}`,
@@ -38,7 +38,7 @@ const About = () => {
   }, []);
 
   const backgroundImage = "/uploads/home/background3.jpg";
-  
+
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 bg-gradient-to-br from-[#dbe3eb] via-[#cbd5d8] to-[#a0aec0] -z-1" />
@@ -47,7 +47,7 @@ const About = () => {
       </div>
       <div className="relative p-8 mb-10 mx-auto max-w-7xl md:max-w-80pct bg-white/90 backdrop-blur-sm rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-6 text-site-dark-gray text-center">About</h1>
-        
+
         {aboutContent.length > 0 ? (
           <div className="grid gap-6">
             {aboutContent.map((item) => (
@@ -62,7 +62,7 @@ const About = () => {
         ) : (
           <p className="text-gray-500">No about content available yet.</p>
         )}
-        
+
         {/* 
         <div className="text-center mb-8">
           <img 
@@ -72,7 +72,7 @@ const About = () => {
           />
         </div>
         */}
-        
+
 
         {/* Social Media Icons*/}
         <div className="mt-8 mb-8 sm:mb-6 text-center">
@@ -95,7 +95,7 @@ const About = () => {
             <a href="mailto:guyalt11@gmail.com" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaEnvelope />
             </a>
-            <a href="https://wa.me/972546981525" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
+            <a href="https://wa.me/41784417110" target="_blank" rel="noopener noreferrer" className="text-3xl text-[#8a99b2] hover:text-gray-600">
               <FaWhatsapp />
             </a>
           </div>
